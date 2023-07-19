@@ -3,7 +3,7 @@
 import { signIn, useSession } from 'next-auth/react';
 import Sidebar from '@/components/Sidebar';
 
-const Layout = () => {
+const Layout = ({ children }) => {
   const { data: session } = useSession();
 
   // if (!session) {
@@ -22,7 +22,7 @@ const Layout = () => {
     <div className='bg-blue-900 min-h-screen flex'>
       <Sidebar />
       <div className='bg-white flex-grow mt-2 mr-2 mb-2 rounded-lg p-4'>
-        Logged in {session?.user.email}
+        {children}
       </div>
     </div>
   );
