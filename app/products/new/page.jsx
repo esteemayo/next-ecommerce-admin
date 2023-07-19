@@ -1,6 +1,7 @@
 'use client';
 
 import { useCallback, useState } from 'react';
+import { createProduct } from '@/services/productService';
 
 const initialState = {
   title: '',
