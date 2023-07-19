@@ -1,8 +1,9 @@
 import mongoose from 'mongoose';
+import clientPromise from '@/lib/mongodb';
 
 const connect = async () => {
   try {
-    await mongoose.connect(process.env.MONGODB_URI);
+    await mongoose.connect(clientPromise.url);
   } catch (err) {
     throw err;
   }
