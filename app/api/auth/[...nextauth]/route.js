@@ -4,7 +4,7 @@ import { MongoDBAdapter } from '@auth/mongodb-adapter';
 
 import clientPromise from '@/lib/mongodb';
 
-const handler = NextAuth({
+export const authOptions = {
   adapter: MongoDBAdapter(clientPromise),
   providers: [
     GoogleProvider({
@@ -21,6 +21,8 @@ const handler = NextAuth({
     strategy: 'jwt',
   },
   secret: process.env.NEXTAUTH_SECRET,
-});
+};
+
+const handler = NextAuth(authOptions);
 
 export { handler as GET, handler as POST };
