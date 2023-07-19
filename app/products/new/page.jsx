@@ -17,9 +17,11 @@ const NewProduct = () => {
     setValues((prev) => ({ ...prev, [name]: value }));
   }, []);
 
-  const handleSubmit = useCallback((e) => {
+  const handleSubmit = useCallback(async (e) => {
     e.preventDefault();
-  }, []);
+
+    await createProduct({ ...values });
+  }, [values]);
 
   return (
     <form onSubmit={handleSubmit}>
