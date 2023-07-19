@@ -26,5 +26,5 @@ h1 {
 }
 
 .btn-primary {
-  @apply bg-blue-900 text-white px-4 py-1 rounded-md outline-blue-900;
+  @apply bg-blue-900 text-white px-4 py-1 rounded-md outline-blue-900 hover:bg-blue-800 transition;
 }
