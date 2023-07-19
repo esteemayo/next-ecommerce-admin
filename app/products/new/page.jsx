@@ -17,7 +17,7 @@ const NewProduct = () => {
   }, []);
 
   return (
-    <div>
+    <form>
       <h1>New Product</h1>
       <div>
         <label htmlFor='name'>Product name</label>
@@ -46,7 +46,7 @@ const NewProduct = () => {
         />
       </div>
       <button type='submit' className='btn-primary'>Save</button>
-    </div>
+    </form>
   );
 };
 
