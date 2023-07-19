@@ -24,3 +24,7 @@ label {
 h1 {
   @apply text-blue-900 mb-2 text-xl;
 }
+
+.btn-primary {
+  @apply bg-blue-500 text-white px-4 py-1 rounded-md outline-blue-900;
+}
