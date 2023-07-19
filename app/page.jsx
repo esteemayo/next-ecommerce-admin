@@ -19,9 +19,11 @@ const Home = () => {
   // }
 
   return (
-    <div className='bg-blue-900 min-h-screen'>
+    <div className='bg-blue-900 min-h-screen flex'>
       <Sidebar />
-      <div>Logged in {session?.user.email}</div>
+      <div className='bg-white flex-grow mt-1'>
+        Logged in {session?.user.email}
+      </div>
     </div>
   );
 };
