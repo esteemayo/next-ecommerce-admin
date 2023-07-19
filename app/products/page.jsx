@@ -3,7 +3,9 @@ import Layout from '@/components/Layout';
 
 const Products = () => {
   return (
-    <div>Products</div>
+    <Layout>
+      Products
+    </Layout>
   );
 };
 
