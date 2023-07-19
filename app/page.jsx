@@ -1,6 +1,7 @@
 'use client';
 
 import { signIn, useSession } from 'next-auth/react';
+import Navbar from '@/components/Navbar';
 
 const Home = () => {
   const { data: session } = useSession();
