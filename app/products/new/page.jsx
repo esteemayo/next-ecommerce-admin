@@ -1,6 +1,14 @@
-import { useSate } from 'react';
+import { useState } from 'react';
+
+const initialState = {
+  title: '',
+  description: '',
+  price: '',
+};
 
 const NewProduct = () => {
+  const [values, setValues] = useState(initialState);
+
   return (
     <div>
       <h1>New Product</h1>
