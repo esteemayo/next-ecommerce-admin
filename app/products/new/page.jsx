@@ -21,7 +21,7 @@ const NewProduct = () => {
   }, []);
 
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <h1>New Product</h1>
       <div>
         <label htmlFor='name'>Product name</label>
