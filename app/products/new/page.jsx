@@ -11,6 +11,11 @@ const initialState = {
 const NewProduct = () => {
   const [values, setValues] = useState(initialState);
 
+  const handleChange = useCallback(({ target: input }) => {
+    const { name, value } = input;
+    setValues((prev) => ({ ...prev, [name]: value }));
+  }, []);
+
   return (
     <div>
       <h1>New Product</h1>
