@@ -20,6 +20,7 @@ const Home = () => {
 
   return (
     <div className='bg-blue-900 min-h-screen'>
+      <Navbar />
       <div>Logged in {session.user.email}</div>
     </div>
   );
