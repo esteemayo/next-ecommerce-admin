@@ -18,7 +18,9 @@ const Home = () => {
   }
 
   return (
-    <div>Logged in {session.user.email}</div>
+    <div className='bg-blue-900 min-h-screen'>
+      <div>Logged in {session.user.email}</div>
+    </div>
   );
 };
 
