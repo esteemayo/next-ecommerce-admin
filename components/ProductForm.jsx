@@ -13,6 +13,7 @@ const ProductForm = ({ product }) => {
     price: product?.price || '',
   });
 
+  const productId = product?._id;
   const { title, description, price } = values;
 
   const handleChange = useCallback(({ target: input }) => {
@@ -23,9 +24,15 @@ const ProductForm = ({ product }) => {
   const handleSubmit = useCallback(async (e) => {
     e.preventDefault();
 
+    if (productId) {
+      await updateProduct(productId, { ...values });
+      setGoToProducts(true);
+      return;
+    }
+
     await createProduct({ ...values });
     setGoToProducts(true);
-  }, [values]);
+  }, [values, productId]);
 
   if (goToProducts) {
     return redirect('/products');
