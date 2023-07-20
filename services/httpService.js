@@ -2,7 +2,7 @@ import axios from 'axios';
 import logger from './logService';
 
 const API = axios.create({
-  baseURL: 'http://localhost:3000',
+  baseURL: 'http://localhost:3000/api',
   headers: {
     'Content-Type': 'application/json',
   },
