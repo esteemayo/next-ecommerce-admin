@@ -3,6 +3,8 @@
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
+import { getProducts } from '@/services/productService';
+
 const Products = () => {
   return (
     <div>
