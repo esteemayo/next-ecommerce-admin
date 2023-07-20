@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 
-const EditProduct = () => {
+const EditProduct = ({ params }) => {
   return (
     <div>EditProduct</div>
   );
