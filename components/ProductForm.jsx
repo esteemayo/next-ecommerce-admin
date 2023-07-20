@@ -1,16 +1,16 @@
 'use client';
 
 import { redirect } from 'next/navigation';
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
 import { createProduct, updateProduct } from '@/services/productService';
 
 const ProductForm = ({ product }) => {
   const [goToProducts, setGoToProducts] = useState(false);
   const [values, setValues] = useState({
-    title: product?.title || '',
-    description: product?.description || '',
-    price: product?.price || '',
+    title: '',
+    description: '',
+    price: '',
   });
 
   const productId = product?._id;
@@ -33,6 +33,14 @@ const ProductForm = ({ product }) => {
     await createProduct({ ...values });
     setGoToProducts(true);
   }, [values, productId]);
+
+  useEffect(() => {
+    setValues({
+      title: product.title,
+      description: product.description,
+      price: product.price,
+    });
+  }, [product]);
 
   if (goToProducts) {
     return redirect('/products');
