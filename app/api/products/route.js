@@ -32,6 +32,7 @@ export const POST = async (request) => {
 
   try {
     await connectDB();
+
     const product = await Product.create({ ...newProduct });
 
     if (product) {
