@@ -1,6 +1,10 @@
 const DeleteProduct = () => {
   return (
-    <div>DeleteProduct</div>
+    <div>
+      Do you really want to delete product X?
+      <button type='button'>Yes</button>
+      <button type='button'>NO</button>
+    </div>
   );
 };
 
