@@ -6,6 +6,15 @@ import { useEffect, useState } from 'react';
 import { getProducts } from '@/services/productService';
 
 const Products = () => {
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    (async () => {
+      const { data } = await getProducts();
+      setProducts(data);
+    })();
+  }, []);
+
   return (
     <div>
       <Link
