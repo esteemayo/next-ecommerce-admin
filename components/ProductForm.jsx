@@ -3,7 +3,7 @@
 import { redirect } from 'next/navigation';
 import { useCallback, useState } from 'react';
 
-import { createProduct } from '@/services/productService';
+import { createProduct, updateProduct } from '@/services/productService';
 
 const ProductForm = ({ product }) => {
   const [goToProducts, setGoToProducts] = useState(false);
