@@ -5,6 +5,10 @@ import { useRouter } from 'next/navigation';
 const DeleteProduct = () => {
   const router = useRouter();
 
+  const goBack = () => {
+    router.push('/products');
+  };
+
   return (
     <div>
       Do you really want to delete product X?
