@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 
 const DeleteProduct = () => {
   const router = useRouter();
+  const [product, setProduct] = useState({});
 
   const goBack = () => {
     router.push('/products');
