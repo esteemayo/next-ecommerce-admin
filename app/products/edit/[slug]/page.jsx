@@ -1,6 +1,8 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+
+import ProductForm from '@/components/ProductForm';
 import { getProductBySlug } from '@/services/productService';
 
 const EditProduct = ({ params }) => {
