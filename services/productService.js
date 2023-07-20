@@ -11,3 +11,6 @@ export const getProductBySlug = (slug) =>
   http.get(`${apiEndpoint}/details/${slug}`);
 
 export const createProduct = (product) => http.post(apiEndpoint, product);
+
+export const updateProduct = (productId, product) =>
+  http.patch(`${apiEndpoint}/${productId}`, product);
