@@ -52,7 +52,7 @@ const Products = () => {
                   </Link>
                 </td>
               </tr>
-            )
+            );
           })}
         </tbody>
       </table>
