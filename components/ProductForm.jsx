@@ -11,7 +11,7 @@ const initialState = {
   price: '',
 };
 
-const ProductForm = ({ product }) => {
+const ProductForm = ({ slug, product }) => {
   const [values, setValues] = useState(initialState);
   const [goToProducts, setGoToProducts] = useState(false);
 
@@ -37,12 +37,12 @@ const ProductForm = ({ product }) => {
   }, [values, productId]);
 
   useEffect(() => {
-    setValues({
-      title: product.title,
-      description: product.description,
-      price: product.price,
+    slug && setValues({
+      title: product.title || '',
+      description: product.description || '',
+      price: product.price || '',
     });
-  }, [product]);
+  }, [slug, product]);
 
   if (goToProducts) {
     return redirect('/products');
@@ -82,7 +82,9 @@ const ProductForm = ({ product }) => {
           onChange={handleChange}
         />
       </div>
-      <button type='submit' className='btn-primary'>Save</button>
+      <button type='submit' className='btn-primary'>
+        {slug ? 'Update' : 'Save'}
+      </button>
     </form>
   );
 };
