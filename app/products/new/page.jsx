@@ -27,10 +27,11 @@ const NewProduct = () => {
     <form onSubmit={handleSubmit}>
       <h1>New Product</h1>
       <div>
-        <label htmlFor='name'>Product name</label>
+        <label htmlFor='title'>Product name</label>
         <input
           type='text'
-          id='name'
+          id='title'
+          name='title'
           placeholder='Product name'
           onChange={handleChange}
         />
@@ -39,6 +40,7 @@ const NewProduct = () => {
         <label htmlFor='description'>Description</label>
         <textarea
           id='description'
+          name='description'
           placeholder='Description'
           onChange={handleChange}
         />
@@ -47,6 +49,7 @@ const NewProduct = () => {
         <label htmlFor='price'>Price (in USD)</label>
         <input
           id='price'
+          name='price'
           type='number'
           placeholder='Price'
           onChange={handleChange}
