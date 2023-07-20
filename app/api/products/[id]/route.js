@@ -16,6 +16,10 @@ export const GET = async (request, { params }) => {
 
     const product = await Product.findById(productId);
 
+    if (!product) {
+      throw new Error('No product found with the given ID');
+    }
+
     return NextResponse.json(product, {
       status: 200,
     });
