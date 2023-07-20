@@ -32,7 +32,9 @@ export const GET = async (request, { params }) => {
 
 export const PATCH = async (request, { params }) => {
   const { id: productId } = params;
+
   const body = request.json();
+  const { title, description, price } = body;
 
   try {
     await connectDB();
@@ -41,11 +43,17 @@ export const PATCH = async (request, { params }) => {
       throw new Error('Invalid ID');
     }
 
-    if (body.title) body.slug = slugify(body.title, { lower: true });
+    const updatedProduct = {
+      title,
+      description,
+      price,
+    };
+
+    if (title) updatedProduct.slug = slugify(title, { lower: true });
 
     const product = await Product.findByIdAndUpdate(
       productId,
-      { $set: { ...body } },
+      { $set: { ...updatedProduct } },
       {
         new: true,
         runValidators: true,
@@ -53,7 +61,9 @@ export const PATCH = async (request, { params }) => {
     );
 
     if (!product) {
-      throw new Error('No product found with the given ID');
+      return NextResponse.json('No product found with the given ID', {
+        status: 404,
+      });
     }
 
     return NextResponse.json(product, {
