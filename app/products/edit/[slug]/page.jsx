@@ -12,7 +12,7 @@ const EditProduct = ({ params }) => {
     (async () => {
       try {
         const { data } = await getProductBySlug(params.slug);
-        setProduct(data.product);
+        setProduct(data);
       } catch (err) {
         console.log(err);
       }
