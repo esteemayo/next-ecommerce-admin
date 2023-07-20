@@ -8,9 +8,9 @@ import { createProduct } from '@/services/productService';
 const ProductForm = ({ product }) => {
   const [goToProducts, setGoToProducts] = useState(false);
   const [values, setValues] = useState({
-    title: product.title || '',
-    description: product.description || '',
-    price: product.price || '',
+    title: product?.title || '',
+    description: product?.description || '',
+    price: product?.price || '',
   });
 
   const handleChange = useCallback(({ target: input }) => {
