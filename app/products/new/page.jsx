@@ -1,6 +1,6 @@
 'use client';
 
-import { useRouter } from 'next/navigation';
+import { redirect } from 'next/navigation';
 import { useCallback, useState } from 'react';
 
 import { createProduct } from '@/services/productService';
@@ -12,8 +12,8 @@ const initialState = {
 };
 
 const NewProduct = () => {
-  const router = useRouter();
   const [values, setValues] = useState(initialState);
+  const [goToProducts, setGoToProducts] = useState(false);
 
   const handleChange = useCallback(({ target: input }) => {
     const { name, value } = input;
@@ -24,8 +24,12 @@ const NewProduct = () => {
     e.preventDefault();
 
     await createProduct({ ...values });
-    router.push('/products');
-  }, [values, router]);
+    setGoToProducts(true);
+  }, [values]);
+
+  if (goToProducts) {
+    return redirect('/products');
+  }
 
   return (
     <form onSubmit={handleSubmit}>
