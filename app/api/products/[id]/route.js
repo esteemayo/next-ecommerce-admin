@@ -1,3 +1,4 @@
+import slugify from 'slugify';
 import { NextResponse } from 'next/server';
 
 import connectDB from '@/utils/db';
