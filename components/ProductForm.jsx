@@ -13,6 +13,8 @@ const ProductForm = ({ product }) => {
     price: product?.price || '',
   });
 
+  const { title, description, price } = values;
+
   const handleChange = useCallback(({ target: input }) => {
     const { name, value } = input;
     setValues((prev) => ({ ...prev, [name]: value }));
@@ -37,6 +39,7 @@ const ProductForm = ({ product }) => {
           type='text'
           id='title'
           name='title'
+          value={title}
           placeholder='Product name'
           onChange={handleChange}
         />
@@ -46,6 +49,7 @@ const ProductForm = ({ product }) => {
         <textarea
           id='description'
           name='description'
+          value={description}
           placeholder='Description'
           onChange={handleChange}
         />
@@ -56,6 +60,7 @@ const ProductForm = ({ product }) => {
           id='price'
           name='price'
           type='number'
+          value={price}
           placeholder='Price'
           onChange={handleChange}
         />
