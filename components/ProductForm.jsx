@@ -5,13 +5,15 @@ import { useCallback, useEffect, useState } from 'react';
 
 import { createProduct, updateProduct } from '@/services/productService';
 
+const initialState = {
+  title: '',
+  description: '',
+  price: '',
+};
+
 const ProductForm = ({ product }) => {
+  const [values, setValues] = useState(initialState);
   const [goToProducts, setGoToProducts] = useState(false);
-  const [values, setValues] = useState({
-    title: '',
-    description: '',
-    price: '',
-  });
 
   const productId = product?._id;
   const { title, description, price } = values;
