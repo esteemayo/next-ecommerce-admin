@@ -20,9 +20,10 @@ const EditProduct = ({ params }) => {
   }, [params.slug]);
 
   return (
-    <div>
+    <>
+      <h1>Edit product</h1>
       <ProductForm product={product} />
-    </div>
+    </>
   );
 };
 
