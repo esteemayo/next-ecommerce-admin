@@ -10,11 +10,11 @@ const DeleteProduct = () => {
   };
 
   return (
-    <div>
-      Do you really want to delete product X?
+    <>
+      <h1>Do you really want to delete product X?</h1>
       <button type='button'>Yes</button>
       <button type='button' onClick={goBack}>NO</button>
-    </div>
+    </>
   );
 };
 
