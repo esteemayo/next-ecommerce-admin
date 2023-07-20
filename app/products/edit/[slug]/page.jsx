@@ -22,7 +22,7 @@ const EditProduct = ({ params }) => {
   return (
     <>
       <h1>Edit product</h1>
-      <ProductForm product={product} />
+      {product && <ProductForm product={product} />}
     </>
   );
 };
