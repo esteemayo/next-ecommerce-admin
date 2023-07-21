@@ -9,15 +9,16 @@ const DeleteProduct = ({ params }) => {
   const router = useRouter();
   const [product, setProduct] = useState({});
 
-  const goBack = () => {
+  const goBack = useCallback(() => {
     router.push('/products');
-  };
+  }, [router]);
 
   const handleDelete = useCallback(async (e) => {
     e.stopPropagation();
 
     await deleteProduct(product._id);
-  }, [product]);
+    goBack();
+  }, [product, goBack]);
 
   useEffect(() => {
     params.slug && (async () => {
