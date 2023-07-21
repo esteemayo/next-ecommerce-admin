@@ -75,3 +75,31 @@ export const PATCH = async (request, { params }) => {
     });
   }
 };
+
+export const DELETE = async (request, { params }) => {
+  const { id: productId } = params;
+
+  try {
+    await connectDB();
+
+    if (!productId || typeof productId !== 'string') {
+      throw new Error('Invalid ID');
+    }
+
+    const product = await Product.findByIdAndDelete(productId);
+
+    if (!product) {
+      return NextResponse.json('No product found with the given ID', {
+        status: 404,
+      });
+    }
+
+    return NextResponse.json('Product deleted successfully', {
+      status: 200,
+    });
+  } catch (err) {
+    return NextResponse.json(err.message, {
+      status: 500,
+    });
+  }
+};
