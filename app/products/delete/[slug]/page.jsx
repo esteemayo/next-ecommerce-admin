@@ -13,6 +13,12 @@ const DeleteProduct = ({ params }) => {
     router.push('/products');
   };
 
+  const handleDelete = useCallback(async (e) => {
+    e.stopPropagation();
+
+    await deleteProduct(product._id);
+  }, [product]);
+
   useEffect(() => {
     params.slug && (async () => {
       try {
