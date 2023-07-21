@@ -56,7 +56,7 @@ table.basic a {
 
 .btn-red,
 .btn-default {
-  @apply px-4 py-1 rounded-md;
+  @apply px-4 py-1 rounded-md cursor-pointer;
 }
 
 .btn-red {
