@@ -3,21 +3,26 @@ import mongoose from 'mongoose';
 
 const { Schema } = mongoose;
 
-const productSchema = new Schema({
-  title: {
-    type: String,
-    required: [true, 'A product must have a title'],
+const productSchema = new Schema(
+  {
+    title: {
+      type: String,
+      required: [true, 'A product must have a title'],
+    },
+    slug: String,
+    description: {
+      type: String,
+      required: [true, 'A product must have a description'],
+    },
+    price: {
+      type: Number,
+      required: [true, 'A product must have a price'],
+    },
   },
-  slug: String,
-  description: {
-    type: String,
-    required: [true, 'A product must have a description'],
-  },
-  price: {
-    type: Number,
-    required: [true, 'A product must have a price'],
-  },
-});
+  {
+    timestamps: true,
+  }
+);
 
 productSchema.pre('save', async function (next) {
   if (!this.isModified('title')) return next();
@@ -31,7 +36,7 @@ productSchema.pre('save', async function (next) {
   }
 });
 
-const Product = mongoose.models.Product ||
-  mongoose.model('Product', productSchema);
+const Product =
+  mongoose.models.Product || mongoose.model('Product', productSchema);
 
 export default Product;
