@@ -1,5 +1,7 @@
-import http from './httpService';
+import axios from 'axios';
 
-const apiEndpoint = '/upload';
-
-export const imageUpload = (data) => http.post(apiEndpoint, data);
+export const uploadImage = (image) =>
+  axios.post(
+    'https://api.cloudinary.com/v1_1/learnhowtocode/image/upload',
+    image,
+  );
