@@ -37,7 +37,13 @@ const DeleteProduct = ({ params }) => {
         &nbsp;&quot;{product?.title}&quot;?
       </h1>
       <div className='flex justify-center gap-2'>
-        <button type='button' className='btn-red'>Yes</button>
+        <button
+          type='button'
+          className='btn-red'
+          onClick={handleDelete}
+        >
+          Yes
+        </button>
         <button
           type='button'
           onClick={goBack}
