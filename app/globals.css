@@ -54,10 +54,15 @@ table.basic a {
   @apply bg-blue-900 text-white text-sm py-1 px-2 rounded-md inline-flex gap-1 mr-1;
 }
 
+.btn-red,
+.btn-default {
+  @apply px-4 py-1 rounded-md;
+}
+
 .btn-red {
-  @apply bg-red-800 text-white;
+  @apply bg-red-800 text-white outline-red-700;
 }
 
 .btn-default {
-  @apply bg-gray-200;
+  @apply bg-gray-500 text-white outline-gray-400;
 }
