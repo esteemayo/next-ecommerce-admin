@@ -36,6 +36,20 @@ const ProductForm = ({ slug, product, images }) => {
     setGoToProducts(true);
   }, [values, productId]);
 
+  const uploadImages = useCallback(async (e) => {
+    const files = e.target?.files;
+
+    if (files?.length > 0) {
+      const data = new FormData();
+      await Promise.all(
+        Object.values(files).map((file) => {
+          console.log(file)
+          return (data.append('file', file))
+        })
+      );
+    }
+  }, []);
+
   useEffect(() => {
     slug && setValues({
       title: product.title || '',
@@ -64,13 +78,19 @@ const ProductForm = ({ slug, product, images }) => {
       <div>
         <label htmlFor='photos'>Photos</label>
         <div className='mb-2'>
-          <label htmlFor='photos' className='w-24 h-24 flex items-center justify-center gap-1 text-sm text-gray-500 rounded-lg bg-gray-200'>
+          <label htmlFor='photos' className='w-24 h-24 cursor-pointer flex items-center justify-center gap-1 text-sm text-gray-500 rounded-lg bg-gray-200'>
             <svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' strokeWidth={1.5} stroke='currentColor' className='w-6 h-6'>
               <path strokeLinecap='round' strokeLinejoin='round' d='M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5m-13.5-9L12 3m0 0l4.5 4.5M12 3v13.5' />
             </svg>
             <span>Upload</span>
           </label>
-          <input type='file' id='photos' className='hidden' />
+          <input
+            type='file'
+            id='photos'
+            multiple
+            className='hidden'
+            onChange={uploadImages}
+          />
           {!images?.length && (
             <div>No photos in this product</div>
           )}
