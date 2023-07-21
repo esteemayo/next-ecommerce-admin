@@ -18,6 +18,9 @@ const productSchema = new Schema(
       type: Number,
       required: [true, 'A product must have a price'],
     },
+    images: {
+      type: [String],
+    },
   },
   {
     timestamps: true,
