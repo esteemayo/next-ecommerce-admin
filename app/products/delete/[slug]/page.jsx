@@ -3,7 +3,9 @@
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
-const DeleteProduct = () => {
+import { getProductBySlug } from '@/services/productService';
+
+const DeleteProduct = ({ params }) => {
   const router = useRouter();
   const [product, setProduct] = useState({});
 
@@ -11,11 +13,33 @@ const DeleteProduct = () => {
     router.push('/products');
   };
 
+  useEffect(() => {
+    params.slug && (async () => {
+      try {
+        const { data } = await getProductBySlug(params.slug);
+        setProduct(data);
+      } catch (err) {
+        console.log(err);
+      }
+    })();
+  }, [params]);
+
   return (
     <>
-      <h1>Do you really want to delete product X?</h1>
-      <button type='button'>Yes</button>
-      <button type='button' onClick={goBack}>NO</button>
+      <h1>
+        Do you really want to delete product
+        &nbsp;&quot;{product?.title}&quot;?
+      </h1>
+      <div className='flex gap-2'>
+        <button type='button' className='btn-red'>Yes</button>
+        <button
+          type='button'
+          onClick={goBack}
+          className='btn-default'
+        >
+          NO
+        </button>
+      </div>
     </>
   );
 };
