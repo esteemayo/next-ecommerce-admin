@@ -16,6 +16,7 @@
     "eslint-config-next": "13.4.10",
     "mongodb": "^5.7.0",
     "mongoose": "^7.4.0",
+    "multiparty": "^4.2.3",
     "next": "13.4.10",
     "next-auth": "^4.22.3",
     "postcss": "8.4.26",
