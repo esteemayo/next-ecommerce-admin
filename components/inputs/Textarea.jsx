@@ -2,7 +2,7 @@
 
 import PropTypes from 'prop-types';
 
-const Textarea = ({ name, label, ...rest }) => {
+const TextArea = ({ name, label, ...rest }) => {
   return (
     <div>
       <label htmlFor={name}>{label}</label>
@@ -15,10 +15,10 @@ const Textarea = ({ name, label, ...rest }) => {
   );
 };
 
-Textarea.propTypes = {
+TextArea.propTypes = {
   name: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
   rest: PropTypes.any,
 };
 
-export default Textarea;
+export default TextArea;
