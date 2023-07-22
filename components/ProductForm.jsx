@@ -6,7 +6,7 @@ import { useCallback, useEffect, useState } from 'react';
 import { uploadImage } from '@/services/imageService';
 import { createProduct, updateProduct } from '@/services/productService';
 
-import Input from './Input';
+import Input from './inputs/Input';
 
 const initialState = {
   title: '',
