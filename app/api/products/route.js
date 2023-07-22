@@ -22,12 +22,13 @@ export const GET = async (request) => {
 export const POST = async (request) => {
   const body = await request.json();
 
-  const { title, description, price } = body;
+  const { title, description, price, images } = body;
 
   const newProduct = {
     title,
     description,
     price,
+    images,
   };
 
   try {
