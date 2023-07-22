@@ -3,6 +3,9 @@
 import { redirect } from 'next/navigation';
 import { useCallback, useEffect, useState } from 'react';
 
+import Input from './inputs/Input';
+import TextArea from './inputs/Textarea';
+
 import { uploadImage } from '@/services/imageService';
 import { createProduct, updateProduct } from '@/services/productService';
 
