@@ -73,17 +73,13 @@ const ProductForm = ({ slug, product, images }) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor='title'>Product name</label>
-        <input
-          type='text'
-          id='title'
-          name='title'
-          value={title}
-          placeholder='Product name'
-          onChange={handleChange}
-        />
-      </div>
+      <Input
+        name='title'
+        label='Product name'
+        value={title}
+        placeholder='Product name'
+        onChange={handleChange}
+      />
       <div>
         <label htmlFor='photos'>Photos</label>
         <div className='mb-2'>
@@ -115,17 +111,14 @@ const ProductForm = ({ slug, product, images }) => {
           onChange={handleChange}
         />
       </div>
-      <div>
-        <label htmlFor='price'>Price (in USD)</label>
-        <input
-          id='price'
-          name='price'
-          type='number'
-          value={price}
-          placeholder='Price'
-          onChange={handleChange}
-        />
-      </div>
+      <Input
+        name='price'
+        type='number'
+        label='Price (in USD)'
+        value={price}
+        placeholder='Price'
+        onChange={handleChange}
+      />
       <button type='submit' className='btn-primary'>
         {slug ? 'Update' : 'Save'}
       </button>
