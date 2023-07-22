@@ -1,5 +1,7 @@
 'use client';
 
+import PropTypes from 'prop-types';
+
 const Input = ({ name, label, type = 'text', ...rest }) => {
   return (
     <div>
