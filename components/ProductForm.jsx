@@ -58,23 +58,6 @@ const ProductForm = ({ slug, product, images }) => {
     setGoToProducts(true);
   }, [files, values, productId]);
 
-  const uploadImages = useCallback(async (e) => {
-    const files = e.target?.files;
-
-    if (files?.length > 0) {
-      const data = new FormData();
-      await Promise.all(
-        Object.values(files).map(async (file) => {
-          data.append('file', file);
-          data.append('upload_preset,', 'next-ecommerce');
-          const res = await uploadImage(data);
-          const { url } = res.data;
-          console.log('Response: ', res.data);
-        })
-      );
-    }
-  }, []);
-
   useEffect(() => {
     slug && setValues({
       title: product.title || '',
