@@ -1,5 +1,7 @@
 'use client';
 
+import PropTypes from 'prop-types';
+
 const Textarea = ({ name, label, ...rest }) => {
   return (
     <div>
