@@ -5,7 +5,6 @@ import { useCallback, useEffect, useState } from 'react';
 
 import { uploadImage } from '@/services/imageService';
 import { createProduct, updateProduct } from '@/services/productService';
-import { list } from 'postcss';
 
 const initialState = {
   title: '',
