@@ -33,7 +33,7 @@ const ProductForm = ({ slug, product, images }) => {
       ...values,
     };
 
-    if (files.length) {
+    if (files) {
       const list = await Promise.all(
         Object.values(files).map(async (file) => {
           const data = new FormData();
