@@ -3,7 +3,9 @@
 import { redirect } from 'next/navigation';
 import { useCallback, useEffect, useState } from 'react';
 
+import { uploadImage } from '@/services/imageService';
 import { createProduct, updateProduct } from '@/services/productService';
+import { list } from 'postcss';
 
 const initialState = {
   title: '',
@@ -12,6 +14,7 @@ const initialState = {
 };
 
 const ProductForm = ({ slug, product, images }) => {
+  const [files, setFiles] = useState(null);
   const [values, setValues] = useState(initialState);
   const [goToProducts, setGoToProducts] = useState(false);
 
@@ -26,15 +29,33 @@ const ProductForm = ({ slug, product, images }) => {
   const handleSubmit = useCallback(async (e) => {
     e.preventDefault();
 
+    const newProduct = {
+      ...values,
+    };
+
+    if (files.length) {
+      const list = await Promise.all(
+        Object.values(files).map(async (file) => {
+          const data = new FormData();
+          data.append('file', file);
+          data.append('upload_preset', 'next-ecommerce');
+          const res = await uploadImage(data);
+          const { url } = res.data;
+          return url;
+        })
+      );
+      newProduct.images = list;
+    }
+
     if (productId) {
-      await updateProduct(productId, { ...values });
+      await updateProduct(productId, { ...newProduct });
       setGoToProducts(true);
       return;
     }
 
-    await createProduct({ ...values });
+    await createProduct({ ...newProduct });
     setGoToProducts(true);
-  }, [values, productId]);
+  }, [files, values, productId]);
 
   const uploadImages = useCallback(async (e) => {
     const files = e.target?.files;
@@ -42,9 +63,12 @@ const ProductForm = ({ slug, product, images }) => {
     if (files?.length > 0) {
       const data = new FormData();
       await Promise.all(
-        Object.values(files).map((file) => {
-          console.log(file)
-          return (data.append('file', file))
+        Object.values(files).map(async (file) => {
+          data.append('file', file);
+          data.append('upload_preset,', 'next-ecommerce');
+          const res = await uploadImage(data);
+          const { url } = res.data;
+          console.log('Response: ', res.data);
         })
       );
     }
@@ -89,7 +113,7 @@ const ProductForm = ({ slug, product, images }) => {
             id='photos'
             multiple
             className='hidden'
-            onChange={uploadImages}
+            onChange={(e) => setFiles(e.target.files)}
           />
           {!images?.length && (
             <div>No photos in this product</div>
