@@ -90,9 +90,9 @@ const ProductForm = ({ slug, product, images }) => {
             </svg>
             <span>Upload</span>
           </label>
-          <input
+          <Input
             type='file'
-            id='photos'
+            name='photos'
             multiple
             className='hidden'
             onChange={(e) => setFiles(e.target.files)}
