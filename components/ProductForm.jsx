@@ -39,6 +39,7 @@ const ProductForm = ({ slug, product, images }) => {
           const data = new FormData();
           data.append('file', file);
           data.append('upload_preset', 'next-ecommerce');
+
           const res = await uploadImage(data);
           const { url } = res.data;
           return url;
