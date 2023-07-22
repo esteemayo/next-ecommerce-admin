@@ -1,4 +1,4 @@
-import React from 'react'
+'use client';
 
 const Input = ({ name, label, type = 'text', ...rest }) => {
   return (
