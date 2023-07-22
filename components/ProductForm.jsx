@@ -7,6 +7,7 @@ import { uploadImage } from '@/services/imageService';
 import { createProduct, updateProduct } from '@/services/productService';
 
 import Input from './inputs/Input';
+import TextArea from './inputs/Textarea';
 
 const initialState = {
   title: '',
