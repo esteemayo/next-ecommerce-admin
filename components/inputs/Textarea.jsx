@@ -15,4 +15,10 @@ const Textarea = ({ name, label, ...rest }) => {
   );
 };
 
+Textarea.propTypes = {
+  name: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
+  rest: PropTypes.any,
+};
+
 export default Textarea;
