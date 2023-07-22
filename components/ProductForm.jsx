@@ -102,16 +102,13 @@ const ProductForm = ({ slug, product, images }) => {
           )}
         </div>
       </div>
-      <div>
-        <label htmlFor='description'>Description</label>
-        <textarea
-          id='description'
-          name='description'
-          value={description}
-          placeholder='Description'
-          onChange={handleChange}
-        />
-      </div>
+      <TextArea
+        name='description'
+        label='Description'
+        value={description}
+        placeholder='Description'
+        onChange={handleChange}
+      />
       <Input
         name='price'
         type='number'
