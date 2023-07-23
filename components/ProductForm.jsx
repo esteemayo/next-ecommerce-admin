@@ -105,9 +105,6 @@ const ProductForm = ({ slug, product, images: existingImages }) => {
             className='hidden'
             onChange={(e) => setFiles(e.target.files)}
           />
-          {!images?.length && (
-            <div>No photos in this product</div>
-          )}
         </div>
       </div>
       <TextArea
