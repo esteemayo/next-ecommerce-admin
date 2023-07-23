@@ -18,6 +18,7 @@ const initialState = {
 
 const ProductForm = ({ slug, product, images: existingImages }) => {
   const [files, setFiles] = useState(null);
+  const [isUploading, setIsUploading] = useState(false);
   const [values, setValues] = useState(initialState);
   const [images, setImages] = useState(existingImages || []);
   const [goToProducts, setGoToProducts] = useState(false);
