@@ -10,6 +10,8 @@ import TextArea from './inputs/Textarea';
 import { uploadImage } from '@/services/imageService';
 import { createProduct, updateProduct } from '@/services/productService';
 
+import Spinner from './Spinner';
+
 const initialState = {
   title: '',
   description: '',
