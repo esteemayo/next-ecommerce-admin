@@ -2,7 +2,7 @@
 
 import PropTypes from 'prop-types';
 
-const Input = ({ name, type, label, ...rest }) => {
+const Input = ({ name, type='text', label, ...rest }) => {
   return (
     <div>
       <label htmlFor={name}>{label}</label>
@@ -14,10 +14,6 @@ const Input = ({ name, type, label, ...rest }) => {
       />
     </div>
   );
-};
-
-Input.defaultProps = {
-  type: 'text',
 };
 
 Input.propTypes = {
