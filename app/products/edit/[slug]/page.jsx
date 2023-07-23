@@ -22,7 +22,13 @@ const EditProduct = ({ params }) => {
   return (
     <>
       <h1>Edit product</h1>
-      {product && <ProductForm slug={params.slug} product={product} />}
+      {product && (
+        <ProductForm 
+          slug={params.slug}
+          product={product} 
+          images={product.images} 
+        />
+      )}
     </>
   );
 };
