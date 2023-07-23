@@ -3,6 +3,7 @@
 import { redirect } from 'next/navigation';
 import { useCallback, useEffect, useState } from 'react';
 import Image from 'next/image';
+import { ReactSortable } from 'react-sortablejs';
 
 import Input from './inputs/Input';
 import TextArea from './inputs/Textarea';
