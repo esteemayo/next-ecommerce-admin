@@ -16,9 +16,10 @@ const initialState = {
   price: '',
 };
 
-const ProductForm = ({ slug, product, images }) => {
+const ProductForm = ({ slug, product, images: existingImages }) => {
   const [files, setFiles] = useState(null);
   const [values, setValues] = useState(initialState);
+  const [images, setImages] = useState(existingImages || []);
   const [goToProducts, setGoToProducts] = useState(false);
 
   const productId = product?._id;
@@ -45,6 +46,7 @@ const ProductForm = ({ slug, product, images }) => {
 
           const res = await uploadImage(data);
           const { url } = res.data;
+          setImages((prev) => [...prev, ...url]);
           return url;
         })
       );
@@ -85,6 +87,11 @@ const ProductForm = ({ slug, product, images }) => {
       <div>
         <label htmlFor='photos'>Photos</label>
         <div className='mb-2'>
+          {!!images.length && images.map((item, index) => {
+            <div key={index} className='h-24'>
+              <Image src={item} alt='' />
+            </div>
+          })}
           <label htmlFor='photos' className='w-24 h-24 cursor-pointer flex items-center justify-center gap-1 text-sm text-gray-500 rounded-lg bg-gray-200'>
             <svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' strokeWidth={1.5} stroke='currentColor' className='w-6 h-6'>
               <path strokeLinecap='round' strokeLinejoin='round' d='M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5m-13.5-9L12 3m0 0l4.5 4.5M12 3v13.5' />
