@@ -39,6 +39,7 @@ const ProductForm = ({ slug, product, images: existingImages }) => {
     };
 
     if (files) {
+      setIsUploading(true);
       const list = await Promise.all(
         Object.values(files).map(async (file) => {
           const data = new FormData();
@@ -48,6 +49,7 @@ const ProductForm = ({ slug, product, images: existingImages }) => {
           const res = await uploadImage(data);
           const { url } = res.data;
           setImages((prev) => [...prev, ...url]);
+          setIsUploading(false);
           return url;
         })
       );
