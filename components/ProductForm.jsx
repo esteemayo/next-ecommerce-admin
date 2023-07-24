@@ -69,8 +69,8 @@ const ProductForm = ({ slug, product, images: existingImages }) => {
     setGoToProducts(true);
   }, [files, values, productId]);
 
-  const updateImagesOrder = useCallback(() => {
-    console.log(arguments)
+  const updateImagesOrder = useCallback((images) => {
+    setImages(images);
   }, []);
 
   useEffect(() => {
