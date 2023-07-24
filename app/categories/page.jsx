@@ -9,7 +9,8 @@ const Categories = () => {
 
   const handleSubmit = useCallback(async (e) => {
     e.preventDefault();
-    await createCategory({ name });
+    const { data } = await createCategory({ name });
+    setCategories((value) => [data, ...value]);
     setName('');
   }, [name]);
 
