@@ -5,7 +5,7 @@ import { createCategory, getCategories, updateCategory } from '@/services/catego
 
 const Categories = () => {
   const [name, setName] = useState('');
-  const [parentCategory, setParentCategory] = useState(null);
+  const [parentCategory, setParentCategory] = useState();
   const [categories, setCategories] = useState([]);
   const [editedCategory, setEditedcategory] = useState(null);
 
@@ -23,6 +23,7 @@ const Categories = () => {
       setCategories((prev) => prev.map((item) => item._id === categoryId ? { ...item, data } : item));
       setEditedcategory(null);
       setName('');
+      setParentCategory('');
       return;
     }
 
