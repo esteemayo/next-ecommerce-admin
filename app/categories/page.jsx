@@ -17,10 +17,19 @@ const Categories = () => {
       parent: parentCategory,
     };
 
+    if (editedCategory) {
+      const categoryId = editedCategory._id;
+      const { data } = await updateCategory(categoryId, newCategory);
+      setCategories((prev) => prev.map((item) => item._id === categoryId ? { ...item, data } : item));
+      setEditedcategory(null);
+      setName('');
+      return;
+    }
+
     const { data } = await createCategory({ ...newCategory });
     setCategories((value) => [data, ...value]);
     setName('');
-  }, [name, parentCategory]);
+  }, [name, parentCategory, editedCategory]);
 
   const editCategory = useCallback((category) => {
     setEditedcategory(category);
