@@ -4,7 +4,7 @@ import { useCallback, useEffect, useState } from 'react';
 import { withSwal } from 'react-sweetalert2';
 import { createCategory, deleteCategory, getCategories, updateCategory } from '@/services/categoryService';
 
-const Categories = () => {
+const Categories = ({ swal }) => {
   const [name, setName] = useState('');
   const [parentCategory, setParentCategory] = useState();
   const [categories, setCategories] = useState([]);
@@ -38,6 +38,26 @@ const Categories = () => {
     setName(category.name);
     setParentCategory(category.parent?._id);
   }, []);
+
+  const handleDelete = useCallback((category) => {
+    swal.fire({
+      title: 'Are you sure?',
+      text: `Do you want to delete ${category.name}?`,
+      showCancelButton: true,
+      cancelButtonText: 'Cancel',
+      confirmButtonText: 'Yes, Delete!',
+      confirmButtonColor: '#d55',
+      reverseButtons: true,
+    }).then(async (result) => {
+      if (result.isConfirmed) {
+        const categoryId = category._id;
+        await deleteCategory(categoryId);
+        setCategories((prev) => ([...prev].filter((item) => item._id !== categoryId)));
+      }
+    }).catch((err) => {
+      console.log(err);
+    });
+  }, [swal]);
 
   useEffect(() => {
     (async () => {
@@ -103,7 +123,13 @@ const Categories = () => {
                   >
                     Edit
                   </button>
-                  <button type='button' className='btn-primary'>Delete</button>
+                  <button
+                    type='button'
+                    className='btn-primary'
+                    onClick={() => handleDelete(item)}
+                  >
+                    Delete
+                  </button>
                 </td>
               </tr>
             );
@@ -114,4 +140,6 @@ const Categories = () => {
   );
 };
 
-export default Categories;
+export default withSwal(({ swal }, ref) => (
+  <Categories swal={swal} />
+));
