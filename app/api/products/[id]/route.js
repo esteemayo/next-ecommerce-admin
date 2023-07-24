@@ -45,10 +45,10 @@ export const PATCH = async (request, { params }) => {
 
     const updatedProduct = {
       title,
-      category,
       description,
       price,
       images,
+      category,
     };
 
     if (title) updatedProduct.slug = slugify(title, { lower: true });
