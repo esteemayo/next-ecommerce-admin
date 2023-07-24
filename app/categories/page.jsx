@@ -20,6 +20,7 @@ const Categories = () => {
             type='text'
             placeholder='Category name'
             className='mb-0'
+            onChange={(e) => setName(e.target.value)}
           />
           <button type='submit' className='btn-primary py-1'>Save</button>
         </div>
