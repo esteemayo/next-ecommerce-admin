@@ -111,7 +111,7 @@ const ProductForm = ({ slug, product, images: existingImages }) => {
         onChange={handleChange}
       />
       <label>Category</label>
-      <select name='' id=''>
+      <select name='category' id=''>
         <option value=''>Uncategorized</option>
         {categories.length > 0 && categories.map((category) => {
           const { _id: id, name } = category;
