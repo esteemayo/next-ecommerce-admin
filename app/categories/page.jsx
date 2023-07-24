@@ -39,6 +39,13 @@ const Categories = () => {
             className='mb-0'
             onChange={(e) => setName(e.target.value)}
           />
+          <select className='mb-0'>
+            <option value=''>No parent category</option>
+            {categories.length > 0 && categories.map((category) => {
+              const { _id: id, name } = category;
+              return <option key={id} value={id}>{name}</option>
+            })}
+          </select>
           <button type='submit' className='btn-primary py-1'>Save</button>
         </div>
       </form>
