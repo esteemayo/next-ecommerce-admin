@@ -65,6 +65,7 @@ const Categories = () => {
           <tr>
             <th>Category name</th>
             <th>Parent category</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
@@ -73,7 +74,11 @@ const Categories = () => {
             return (
               <tr key={id}>
                 <td>{name}</td>
-                <td>{parent?.name}</td>
+                <td>{parent?.name ?? 'nil'}</td>
+                <td>
+                  <button type='button' className='btn-primary mr-1'>Edit</button>
+                  <button type='button' className='btn-primary'>Delete</button>
+                </td>
               </tr>
             );
           })}
