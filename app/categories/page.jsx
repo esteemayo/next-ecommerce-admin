@@ -1,6 +1,6 @@
 'use client';
 
-import { useCallback } from 'react';
+import { useCallback, useState } from 'react';
 
 const Categories = () => {
   const handleSubmit = useCallback((e) => {
