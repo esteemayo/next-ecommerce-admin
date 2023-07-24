@@ -16,6 +16,7 @@ import Spinner from './Spinner';
 
 const initialState = {
   title: '',
+  category: '',
   description: '',
   price: '',
 };
