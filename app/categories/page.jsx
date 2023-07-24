@@ -100,8 +100,8 @@ const Categories = ({ swal }) => {
               return <option key={id} value={id}>{name}</option>
             })}
           </select>
-          <button type='submit' className='btn-primary py-1'>Save</button>
         </div>
+        <button type='submit' className='btn-primary py-1'>Save</button>
       </form>
       <table className='basic mt-4'>
         <thead>
