@@ -34,7 +34,7 @@ export const PATCH = async (request, { params }) => {
   const { id: productId } = params;
 
   const body = await request.json();
-  const { title, description, price } = body;
+  const { title, category, description, price } = body;
 
   try {
     await connectDB();
