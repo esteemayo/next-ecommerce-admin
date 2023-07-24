@@ -30,7 +30,7 @@ const ProductForm = ({ slug, product, images: existingImages }) => {
   const [goToProducts, setGoToProducts] = useState(false);
 
   const productId = product?._id;
-  const { title, description, price } = values;
+  const { title, category, description, price } = values;
 
   const handleChange = useCallback(({ target: input }) => {
     const { name, value } = input;
