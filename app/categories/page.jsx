@@ -20,7 +20,7 @@ const Categories = ({ swal }) => {
 
     if (editedCategory) {
       const { _id: categoryId } = editedCategory;
-      const { data } = await updateCategory(categoryId, newCategory);
+      const { data } = await categoryAPI.updateCategory(categoryId, newCategory);
       setCategories((prev) => prev.map((item) => item._id === categoryId ? { ...item, name: data.name, parent: data.parent } : item));
       setEditedcategory(null);
       setName('');
@@ -28,7 +28,7 @@ const Categories = ({ swal }) => {
       return;
     }
 
-    const { data } = await createCategory({ ...newCategory });
+    const { data } = await categoryAPI.createCategory({ ...newCategory });
     setCategories((value) => [data, ...value]);
     setName('');
     setParentCategory('');
@@ -53,7 +53,7 @@ const Categories = ({ swal }) => {
     }).then(async (result) => {
       if (result.isConfirmed) {
         const { _id: categoryId } = category;
-        await deleteCategory(categoryId);
+        await categoryAPI.deleteCategory(categoryId);
         setCategories((prev) => ([...prev].filter((item) => item._id !== categoryId)));
       }
     }).catch((err) => {
@@ -64,7 +64,7 @@ const Categories = ({ swal }) => {
   useEffect(() => {
     (async () => {
       try {
-        const { data } = await getCategories();
+        const { data } = await categoryAPI.getCategories();
         setCategories(data);
       } catch (err) {
         console.log(err);
