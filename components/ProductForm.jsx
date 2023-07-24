@@ -79,6 +79,7 @@ const ProductForm = ({ slug, product, images: existingImages }) => {
   useEffect(() => {
     slug && setValues({
       title: product.title || '',
+      category: product.category || '',
       description: product.description || '',
       price: product.price || '',
     });
