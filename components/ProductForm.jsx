@@ -69,13 +69,19 @@ const ProductForm = ({ slug, product, images: existingImages }) => {
     setGoToProducts(true);
   }, [files, values, productId]);
 
+  const updateImagesOrder = useCallback(() => {
+    console.log(arguments)
+  }, []);
+
   useEffect(() => {
     slug && setValues({
       title: product.title || '',
       description: product.description || '',
       price: product.price || '',
     });
-  }, [slug, product]);
+
+    // slug && setImages(existingImages || []);
+  }, [slug, product, existingImages]);
 
   if (goToProducts) {
     return redirect('/products');
@@ -93,11 +99,17 @@ const ProductForm = ({ slug, product, images: existingImages }) => {
       <div>
         <label htmlFor='photos'>Photos</label>
         <div className='mb-2 flex flex-wrap gap-1'>
-          {!!images.length && images.map((item, index) => {
-            <div key={index} className='h-24'>
-              <Image src={item} alt='' className='rounded-lg' />
-            </div>
-          })}
+          <ReactSortable
+            list={images}
+            setList={updateImagesOrder}
+            className='flex flex-wrap gap-1'
+          >
+            {!!images.length && images.map((item, index) => {
+              <div key={index} className='h-24'>
+                <Image src={item} alt='' className='rounded-lg' />
+              </div>
+            })}
+          </ReactSortable>
           {isUploading && (
             <div className='h-24 flex items-center'>
               <Spinner />
