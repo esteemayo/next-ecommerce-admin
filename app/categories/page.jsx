@@ -5,7 +5,7 @@ import { createCategory, getCategories } from '@/services/categoryService';
 
 const Categories = () => {
   const [name, setName] = useState('');
-  const [parentCategory, setParentCategory] = useState('');
+  const [parentCategory, setParentCategory] = useState(null);
   const [categories, setCategories] = useState([]);
   const [editedCategory, setEditedcategory] = useState(null);
 
