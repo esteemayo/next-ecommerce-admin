@@ -110,7 +110,7 @@ const ProductForm = ({ slug, product, images: existingImages }) => {
         placeholder='Product name'
         onChange={handleChange}
       />
-      <label>Category</label>
+      <label htmlFor='category'>Category</label>
       <select
         name='category'
         id='category'
