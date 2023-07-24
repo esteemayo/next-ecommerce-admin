@@ -96,6 +96,10 @@ const ProductForm = ({ slug, product, images: existingImages }) => {
         placeholder='Product name'
         onChange={handleChange}
       />
+      <label>Category</label>
+      <select name='' id=''>
+        <option value=''>Uncategorized</option>
+      </select>
       <div>
         <label htmlFor='photos'>Photos</label>
         <div className='mb-2 flex flex-wrap gap-1'>
