@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useState } from 'react';
 import { withSwal } from 'react-sweetalert2';
+
 import * as categoryAPI from '@/services/categoryService';
 
 const Categories = ({ swal }) => {
