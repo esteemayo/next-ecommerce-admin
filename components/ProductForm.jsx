@@ -85,6 +85,17 @@ const ProductForm = ({ slug, product, images: existingImages }) => {
     // slug && setImages(existingImages || []);
   }, [slug, product, existingImages]);
 
+  useEffect(() => {
+    (async () => {
+      try {
+        const { data } = await getCategories();
+        setCategories(data);
+      } catch (err) {
+        console.log(err);
+      }
+    })();
+  }, []);
+
   if (goToProducts) {
     return redirect('/products');
   }
