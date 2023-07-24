@@ -26,6 +26,7 @@ export const POST = async (request) => {
 
   const newProduct = {
     title,
+    category,
     description,
     price,
     images,
