@@ -18,6 +18,7 @@ const Categories = () => {
           <input
             id='name'
             type='text'
+            value={name}
             placeholder='Category name'
             className='mb-0'
             onChange={(e) => setName(e.target.value)}
