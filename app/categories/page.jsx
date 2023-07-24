@@ -47,6 +47,16 @@ const Categories = () => {
             <th>Category name</th>
           </tr>
         </thead>
+        <tbody>
+          {categories.length > 0 && categories.map((item) => {
+            const { _id: id, name } = item;
+            return (
+              <tr key={id}>
+                <td>{name}</td>
+              </tr>
+            );
+          })}
+        </tbody>
       </table>
     </>
   );
