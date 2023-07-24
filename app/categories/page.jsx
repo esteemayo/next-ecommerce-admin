@@ -10,10 +10,16 @@ const Categories = () => {
 
   const handleSubmit = useCallback(async (e) => {
     e.preventDefault();
-    const { data } = await createCategory({ name });
+
+    const newCategory = {
+      name,
+      parent: parentCategory,
+    };
+
+    const { data } = await createCategory({ ...newCategory });
     setCategories((value) => [data, ...value]);
     setName('');
-  }, [name]);
+  }, [name, parentCategory]);
 
   useEffect(() => {
     (async () => {
