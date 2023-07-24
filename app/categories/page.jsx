@@ -13,6 +13,17 @@ const Categories = () => {
     setName('');
   }, [name]);
 
+  useEffect(() => {
+    (async () => {
+      try {
+        const { data } = await getCategories();
+        setCategories(data);
+      } catch (err) {
+        console.log(err);
+      }
+    })();
+  }, []);
+
   return (
     <>
       <h1>Categories</h1>
