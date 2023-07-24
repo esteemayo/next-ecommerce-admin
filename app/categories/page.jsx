@@ -40,7 +40,11 @@ const Categories = () => {
             className='mb-0'
             onChange={(e) => setName(e.target.value)}
           />
-          <select className='mb-0'>
+          <select
+            value={parentCategory}
+            onChange={(e) => setParentCategory(e.target.value)}
+            className='mb-0'
+          >
             <option value=''>No parent category</option>
             {categories.length > 0 && categories.map((category) => {
               const { _id: id, name } = category;
