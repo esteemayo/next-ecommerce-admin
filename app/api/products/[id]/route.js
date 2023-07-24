@@ -48,6 +48,7 @@ export const PATCH = async (request, { params }) => {
       category,
       description,
       price,
+      images,
     };
 
     if (title) updatedProduct.slug = slugify(title, { lower: true });
