@@ -1,6 +1,7 @@
 'use client';
 
 import { useCallback, useState } from 'react';
+import { createCategory } from '@/services/categoryService';
 
 const Categories = () => {
   const [name, setName] = useState('');
