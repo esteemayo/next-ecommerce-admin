@@ -3,7 +3,7 @@ import { NextResponse } from 'next/server';
 import connectDB from '@/utils/db';
 import Category from '@/models/Category';
 
-export const DELETE = async (request, { params }) => {
+export const PATCH = async (request, { params }) => {
   const { id: categoryId } = params;
   const body = await request.json();
 
