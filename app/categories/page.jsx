@@ -1,5 +1,7 @@
 'use client';
 
+import { useCallback } from 'react';
+
 const Categories = () => {
   return (
     <>
