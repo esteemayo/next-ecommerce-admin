@@ -8,6 +8,9 @@ const categorySchema = new Schema(
       trim: true,
       required: [true, 'A category must have a name'],
     },
+    parent: {
+      type: mongoose.Types.ObjectId,
+    },
   },
   {
     timestamps: true,
