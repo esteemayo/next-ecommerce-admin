@@ -31,6 +31,7 @@ const Categories = ({ swal }) => {
     const { data } = await createCategory({ ...newCategory });
     setCategories((value) => [data, ...value]);
     setName('');
+    setParentCategory('');
   }, [name, parentCategory, editedCategory]);
 
   const editCategory = useCallback((category) => {
