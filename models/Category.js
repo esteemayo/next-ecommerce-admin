@@ -6,6 +6,7 @@ const categorySchema = new Schema(
     name: {
       type: String,
       trim: true,
+      lowercase: true,
       required: [true, 'A category must have a name'],
     },
     parent: {
