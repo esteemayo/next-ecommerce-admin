@@ -10,6 +10,7 @@ import TextArea from './inputs/Textarea';
 
 import { uploadImage } from '@/services/imageService';
 import { createProduct, updateProduct } from '@/services/productService';
+import { getCategories } from '@/services/categoryService';
 
 import Spinner from './Spinner';
 
