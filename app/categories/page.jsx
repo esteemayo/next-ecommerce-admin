@@ -20,7 +20,7 @@ const Categories = () => {
     if (editedCategory) {
       const categoryId = editedCategory._id;
       const { data } = await updateCategory(categoryId, newCategory);
-      setCategories((prev) => prev.map((item) => item._id === categoryId ? { ...item, data } : item));
+      setCategories((prev) => prev.map((item) => item._id === categoryId ? { ...item, name: data.name, parent: data.parent } : item));
       setEditedcategory(null);
       setName('');
       setParentCategory('');
