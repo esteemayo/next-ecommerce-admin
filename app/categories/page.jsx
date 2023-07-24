@@ -22,6 +22,10 @@ const Categories = () => {
     setName('');
   }, [name, parentCategory]);
 
+  const editCategory = useCallback((category) => {
+    setEditedcategory(category);
+  }, []);
+
   useEffect(() => {
     (async () => {
       try {
