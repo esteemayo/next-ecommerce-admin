@@ -50,7 +50,7 @@ const Categories = ({ swal }) => {
       reverseButtons: true,
     }).then(async (result) => {
       if (result.isConfirmed) {
-        const categoryId = category._id;
+        const { _id: categoryId } = category;
         await deleteCategory(categoryId);
         setCategories((prev) => ([...prev].filter((item) => item._id !== categoryId)));
       }
