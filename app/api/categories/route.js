@@ -7,7 +7,7 @@ export const GET = async (request) => {
   try {
     await connectDB();
 
-    const categories = await Category.find();
+    const categories = await Category.find().sort('-createdAt');
 
     return NextResponse.json(categories, {
       status: 200,
