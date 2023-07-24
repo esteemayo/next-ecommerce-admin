@@ -7,6 +7,7 @@ const Categories = () => {
   const [name, setName] = useState('');
   const [parentCategory, setParentCategory] = useState('');
   const [categories, setCategories] = useState([]);
+  const [editedCategory, setEditedcategory] = useState(null);
 
   const handleSubmit = useCallback(async (e) => {
     e.preventDefault();
