@@ -112,6 +112,14 @@ const ProductForm = ({ slug, product, images: existingImages }) => {
       <label>Category</label>
       <select name='' id=''>
         <option value=''>Uncategorized</option>
+        {categories.length > 0 && categories.map((category) => {
+          const { _id: id, name } = category;
+          return (
+            <option key={id} value={id}>
+              {name}
+            </option>
+          );
+        })}
       </select>
       <div>
         <label htmlFor='photos'>Photos</label>
