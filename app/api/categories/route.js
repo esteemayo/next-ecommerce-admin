@@ -4,12 +4,12 @@ import connectDB from '@/utils/db';
 import Category from '@/models/Category';
 
 export const POST = async (request) => {
-  const { name } = await request.json();
+  const body = await request.json();
 
   try {
     await connectDB();
 
-    const category = await Category.create(name);
+    const category = await Category.create({ ...body });
 
     if (category) {
       return NextResponse.json(category, {
