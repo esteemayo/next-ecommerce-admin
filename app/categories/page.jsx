@@ -3,6 +3,8 @@
 import { useCallback, useState } from 'react';
 
 const Categories = () => {
+  const [name, setName] = useState(null);
+
   const handleSubmit = useCallback((e) => {
     e.preventDefault();
   }, []);
