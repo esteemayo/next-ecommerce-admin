@@ -44,6 +44,7 @@ const Categories = ({ swal }) => {
     swal.fire({
       title: 'Are you sure?',
       text: `Do you want to delete ${category.name}?`,
+      icon: 'question',
       showCancelButton: true,
       cancelButtonText: 'Cancel',
       confirmButtonText: 'Yes, Delete!',
