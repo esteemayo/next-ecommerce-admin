@@ -73,7 +73,7 @@ const Categories = () => {
             return (
               <tr key={id}>
                 <td>{name}</td>
-                <td>{parent}</td>
+                <td>{parent?.name}</td>
               </tr>
             );
           })}
