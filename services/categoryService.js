@@ -10,3 +10,6 @@ export const createCategory = (name) => http.post(apiEndpoint, name);
 
 export const updateCategory = (categoryId, data) =>
   http.patch(categoryUrl(categoryId), data);
+
+export const deleteCategory = (categoryId) =>
+  http.delete(categoryUrl(categoryId));
