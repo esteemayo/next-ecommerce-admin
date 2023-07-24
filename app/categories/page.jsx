@@ -6,9 +6,11 @@ import { createCategory } from '@/services/categoryService';
 const Categories = () => {
   const [name, setName] = useState('');
 
-  const handleSubmit = useCallback((e) => {
+  const handleSubmit = useCallback(async (e) => {
     e.preventDefault();
-  }, []);
+    await createCategory(name);
+    setName('');
+  }, [name]);
 
   return (
     <>
