@@ -29,6 +29,13 @@ const Categories = () => {
           <button type='submit' className='btn-primary py-1'>Save</button>
         </div>
       </form>
+      <table className='basic mt-4'>
+        <thead>
+          <tr>
+            <th>Category name</th>
+          </tr>
+        </thead>
+      </table>
     </>
   );
 };
