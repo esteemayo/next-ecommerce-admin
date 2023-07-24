@@ -4,14 +4,15 @@ const Categories = () => {
   return (
     <>
       <h1>Categories</h1>
-      <label htmlFor="name">New category name</label>
+      <label htmlFor='name'>New category name</label>
       <div className='flex gap-1'>
         <input
+          id='name'
           type='text'
           placeholder='Category name'
           className='mb-0'
         />
-        <button className='btn-primary py-1'>Save</button>
+        <button type='submit' className='btn-primary py-1'>Save</button>
       </div>
     </>
   );
