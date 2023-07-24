@@ -3,6 +3,10 @@
 import { useCallback } from 'react';
 
 const Categories = () => {
+  const handleSubmit = useCallback((e) => {
+    e.preventDefault();
+  }, []);
+
   return (
     <>
       <h1>Categories</h1>
