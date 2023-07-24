@@ -64,14 +64,16 @@ const Categories = () => {
         <thead>
           <tr>
             <th>Category name</th>
+            <th>Parent category</th>
           </tr>
         </thead>
         <tbody>
           {categories.length > 0 && categories.map((item) => {
-            const { _id: id, name } = item;
+            const { _id: id, name, parent } = item;
             return (
               <tr key={id}>
                 <td>{name}</td>
+                <td>{parent}</td>
               </tr>
             );
           })}
