@@ -25,6 +25,7 @@ const ProductForm = ({ slug, product, images: existingImages }) => {
   const [isUploading, setIsUploading] = useState(false);
   const [values, setValues] = useState(initialState);
   const [images, setImages] = useState(existingImages || []);
+  const [categories, setCategories] = useState([]);
   const [goToProducts, setGoToProducts] = useState(false);
 
   const productId = product?._id;
