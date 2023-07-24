@@ -81,7 +81,13 @@ const Categories = () => {
                 <td>{name}</td>
                 <td>{parent?.name ?? 'nil'}</td>
                 <td>
-                  <button type='button' className='btn-primary mr-1'>Edit</button>
+                  <button
+                    type='button'
+                    className='btn-primary mr-1'
+                    onClick={() => editCategory(item)}
+                  >
+                    Edit
+                  </button>
                   <button type='button' className='btn-primary'>Delete</button>
                 </td>
               </tr>
