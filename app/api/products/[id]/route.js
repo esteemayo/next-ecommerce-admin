@@ -45,6 +45,7 @@ export const PATCH = async (request, { params }) => {
 
     const updatedProduct = {
       title,
+      category,
       description,
       price,
     };
