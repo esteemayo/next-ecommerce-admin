@@ -86,13 +86,11 @@ const Categories = ({ swal }) => {
             type='text'
             value={name}
             placeholder='Category name'
-            className='mb-0'
             onChange={(e) => setName(e.target.value)}
           />
           <select
             value={parentCategory}
             onChange={(e) => setParentCategory(e.target.value)}
-            className='mb-0'
           >
             <option value=''>No parent category</option>
             {categories.length > 0 && categories.map((category) => {
