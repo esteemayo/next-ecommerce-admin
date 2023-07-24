@@ -1,6 +1,7 @@
 'use client';
 
 import { useCallback, useEffect, useState } from 'react';
+import { withSwal } from 'react-sweetalert2';
 import { createCategory, getCategories, updateCategory } from '@/services/categoryService';
 
 const Categories = () => {
