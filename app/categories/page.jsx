@@ -167,42 +167,44 @@ const Categories = ({ swal }) => {
         </div>
         <button type='submit' className='btn-primary py-1'>Save</button>
       </form>
-      <table className='basic mt-4'>
-        <thead>
-          <tr>
-            <th>Category name</th>
-            <th>Parent category</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-          {categories.length > 0 && categories.map((item) => {
-            const { _id: id, name, parent } = item;
-            return (
-              <tr key={id}>
-                <td>{name}</td>
-                <td>{parent?.name ?? 'nil'}</td>
-                <td>
-                  <button
-                    type='button'
-                    className='btn-primary mr-1'
-                    onClick={() => editCategory(item)}
-                  >
-                    Edit
-                  </button>
-                  <button
-                    type='button'
-                    className='btn-primary'
-                    onClick={() => handleDelete(item)}
-                  >
-                    Delete
-                  </button>
-                </td>
-              </tr>
-            );
-          })}
-        </tbody>
-      </table>
+      {!editedCategory && (
+        <table className='basic mt-4'>
+          <thead>
+            <tr>
+              <th>Category name</th>
+              <th>Parent category</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            {categories.length > 0 && categories.map((item) => {
+              const { _id: id, name, parent } = item;
+              return (
+                <tr key={id}>
+                  <td>{name}</td>
+                  <td>{parent?.name ?? 'nil'}</td>
+                  <td>
+                    <button
+                      type='button'
+                      className='btn-primary mr-1'
+                      onClick={() => editCategory(item)}
+                    >
+                      Edit
+                    </button>
+                    <button
+                      type='button'
+                      className='btn-primary'
+                      onClick={() => handleDelete(item)}
+                    >
+                      Delete
+                    </button>
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      )}
     </>
   );
 };
