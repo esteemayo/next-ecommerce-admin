@@ -66,19 +66,13 @@ const Categories = ({ swal }) => {
           item._id === categoryId ? { ...item, name: data.name, parent: data.parent } : item
         )
       );
-      setEditedCategory(null);
-      setName('');
-      setParentCategory('');
-      setProperties([]);
-      return;
+    } else {
+      const { data } = await categoryAPI.createCategory({ ...newCategory });
+      setCategories((value) => [data, ...value]);
     }
 
-    const { data } = await categoryAPI.createCategory({ ...newCategory });
-    setCategories((value) => [data, ...value]);
-    setName('');
-    setParentCategory('');
-    setProperties([]);
-  }, [name, properties, parentCategory, editedCategory]);
+    handleClear();
+  }, [name, properties, parentCategory, editedCategory, handleClear]);
 
   const editCategory = useCallback((category) => {
     setEditedCategory(category);
