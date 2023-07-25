@@ -93,7 +93,7 @@ const Categories = ({ swal }) => {
   const handleCancel = useCallback(() => {
     setEditedCategory(null);
     setName('');
-    setParentCategory();
+    setCategories([]);
   }, []);
 
   useEffect(() => {
