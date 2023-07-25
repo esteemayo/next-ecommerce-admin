@@ -47,6 +47,7 @@ const ProductForm = ({ slug, product, images: existingImages }) => {
 
     const newProduct = {
       ...values,
+      properties,
     };
 
     if (files) {
@@ -75,7 +76,7 @@ const ProductForm = ({ slug, product, images: existingImages }) => {
 
     await createProduct({ ...newProduct });
     setGoToProducts(true);
-  }, [files, values, productId]);
+  }, [files, values, properties, productId]);
 
   const updateImagesOrder = useCallback((images) => {
     setImages(images);
