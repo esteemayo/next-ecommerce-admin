@@ -137,15 +137,20 @@ const Categories = ({ swal }) => {
                 <input
                   type='text'
                   value={name}
+                  className='mb-0'
                   placeholder='property name (example: color)'
                   onChange={(e) => handlePropertyNameChange(index, item, e.target.value)}
                 />
                 <input
                   type='text'
                   value={values}
+                  className='mb-0'
                   placeholder='values, comma separated'
                   onChange={(e) => handlePropertyValuesChange(index, item, e.target.value)}
                 />
+                <button type='button' className='btn-default'>
+                  Remove
+                </button>
               </div>
             );
           })}
