@@ -7,7 +7,7 @@ import * as categoryAPI from '@/services/categoryService';
 
 const Categories = ({ swal }) => {
   const [name, setName] = useState('');
-  const [parentCategory, setParentCategory] = useState();
+  const [parentCategory, setParentCategory] = useState('');
   const [categories, setCategories] = useState([]);
   const [editedCategory, setEditedCategory] = useState(null);
   const [properties, setProperties] = useState([]);
@@ -44,8 +44,8 @@ const Categories = ({ swal }) => {
 
     const newCategory = {
       name,
-      parent: parentCategory,
-      properties: properties.map((item) => ({ 
+      parent: parentCategory === '' ? undefined : parentCategory,
+      properties: properties.map((item) => ({
         name: item.name,
         values: item.values.split(',')
       })),
