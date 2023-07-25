@@ -33,6 +33,12 @@ const Categories = ({ swal }) => {
     });
   }, []);
 
+  const handleRemoveProperty = useCallback((propertyIndex) => {
+    setProperties((prev) =>
+      [...prev].filter((_, index) => index !== propertyIndex)
+    );
+  }, []);
+
   const handleSubmit = useCallback(async (e) => {
     e.preventDefault();
 
@@ -148,7 +154,11 @@ const Categories = ({ swal }) => {
                   placeholder='values, comma separated'
                   onChange={(e) => handlePropertyValuesChange(index, item, e.target.value)}
                 />
-                <button type='button' className='btn-default'>
+                <button
+                  type='button'
+                  onClick={() => handleRemoveProperty(index)}
+                  className='btn-default'
+                >
                   Remove
                 </button>
               </div>
