@@ -50,8 +50,8 @@ const Categories = ({ swal }) => {
     if (editedCategory) {
       const { _id: categoryId } = editedCategory;
       const { data } = await categoryAPI.updateCategory(categoryId, newCategory);
-      setCategories((prev) => 
-        prev.map((item) => 
+      setCategories((prev) =>
+        prev.map((item) =>
           item._id === categoryId ? { ...item, name: data.name, parent: data.parent } : item
         )
       );
@@ -94,7 +94,9 @@ const Categories = ({ swal }) => {
     });
   }, [swal]);
 
-  const handleCancel = useCallback(() => {
+  const handleCancel = useCallback((e) => {
+    e.stopPropagation();
+
     setEditedCategory(null);
     setName('');
     setCategories([]);
