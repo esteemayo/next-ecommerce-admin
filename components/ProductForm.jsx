@@ -19,6 +19,7 @@ const initialState = {
   category: '',
   description: '',
   price: '',
+  properties: {},
 };
 
 const ProductForm = ({ slug, product, images: existingImages }) => {
