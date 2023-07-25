@@ -25,6 +25,14 @@ const Categories = ({ swal }) => {
     });
   }, []);
 
+  const handlePropertyValuesChange = useCallback((index, property, newValues) => {
+    setProperties((prev) => {
+      const properties = [...prev];
+      properties[index].values = newValues;
+      return properties;
+    });
+  }, []);
+
   const handleSubmit = useCallback(async (e) => {
     e.preventDefault();
 
