@@ -165,7 +165,16 @@ const Categories = ({ swal }) => {
             );
           })}
         </div>
-        <button type='submit' className='btn-primary py-1'>Save</button>
+        <div className='flex gap-1'>
+          {editedCategory && (
+            <button type='button' className='btn-default'>
+              Cancel
+            </button>
+          )}
+          <button type='submit' className='btn-primary py-1'>
+            Save
+          </button>
+        </div>
       </form>
       {!editedCategory && (
         <table className='basic mt-4'>
