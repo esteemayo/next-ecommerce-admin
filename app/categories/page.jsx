@@ -97,6 +97,7 @@ const Categories = ({ swal }) => {
     setEditedCategory(category);
     setName(category.name);
     setParentCategory(category.parent?._id);
+    setProperties(category.properties);
   }, []);
 
   const handleDelete = useCallback((category) => {
