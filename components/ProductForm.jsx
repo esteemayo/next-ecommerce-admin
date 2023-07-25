@@ -78,8 +78,14 @@ const ProductForm = ({ slug, product, images: existingImages }) => {
 
   const propertiesToFill = [];
   if (categories.length > 0 && category) {
-    const selCatInfo = categories.find((item) => item._id === category);
-    propertiesToFill.push(...selCatInfo.properties);
+    let catInfo = categories.find((item) => item._id === category);
+    propertiesToFill.push(...catInfo.properties);
+
+    while (catInfo?.parent?._id) {
+      const parentCat = categories.find((item) => item._id === catInfo?.parent?._id);
+      propertiesToFill.push(parentCat.properties);
+      catInfo = parentCat;
+    }
   }
 
   useEffect(() => {
