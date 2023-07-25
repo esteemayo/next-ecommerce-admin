@@ -34,7 +34,14 @@ export const PATCH = async (request, { params }) => {
   const { id: productId } = params;
 
   const body = await request.json();
-  const { title, description, price, images, category } = body;
+  const {
+    title,
+    description,
+    price,
+    images,
+    category,
+    properties,
+  } = body;
 
   try {
     await connectDB();
@@ -49,6 +56,7 @@ export const PATCH = async (request, { params }) => {
       price,
       images,
       category,
+      properties,
     };
 
     if (title) updatedProduct.slug = slugify(title, { lower: true });
