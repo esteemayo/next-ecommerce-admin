@@ -99,7 +99,7 @@ const Categories = ({ swal }) => {
 
     setEditedCategory(null);
     setName('');
-    setCategories([]);
+    setParentCategory('');
   }, []);
 
   useEffect(() => {
