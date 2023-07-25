@@ -141,7 +141,9 @@ const Categories = ({ swal }) => {
   }, []);
 
   const formLabel = useMemo(() => {
-    return editedCategory ? `Edit category ${editedCategory.name}` : 'Create new category'
+    return editedCategory ?
+      `Edit category ${editedCategory.name}` :
+      'Create new category';
   }, [editedCategory]);
 
   useEffect(() => {
