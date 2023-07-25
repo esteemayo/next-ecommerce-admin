@@ -152,9 +152,7 @@ const Categories = ({ swal }) => {
     <>
       <h1>Categories</h1>
       <form onSubmit={handleSubmit}>
-        <label htmlFor='name'>
-          {editedCategory ? `Edit category ${editedCategory.name}` : 'Create new category'}
-        </label>
+        <label htmlFor='name'>{formLabel}</label>
         <div className='flex gap-1'>
           <input
             id='name'
