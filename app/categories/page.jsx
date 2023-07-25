@@ -12,6 +12,15 @@ const Categories = ({ swal }) => {
   const [editedCategory, setEditedCategory] = useState(null);
   const [properties, setProperties] = useState([]);
 
+  const fetchCategories = useCallback(async () => {
+    try {
+      const { data } = await categoryAPI.getCategories();
+      setCategories(data);
+    } catch (err) {
+      console.log(err);
+    }
+  }, []);
+
   const handleClick = useCallback((e) => {
     e.stopPropagation();
     setProperties((prev) => [...prev, { name: '', values: '' }]);
@@ -117,15 +126,6 @@ const Categories = ({ swal }) => {
     setEditedCategory(null);
     setName('');
     setParentCategory('');
-  }, []);
-
-  const fetchCategories = useCallback(async () => {
-    try {
-      const { data } = await categoryAPI.getCategories();
-      setCategories(data);
-    } catch (err) {
-      console.log(err);
-    }
   }, []);
 
   useEffect(() => {
