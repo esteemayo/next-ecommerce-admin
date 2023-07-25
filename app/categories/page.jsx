@@ -39,6 +39,13 @@ const Categories = ({ swal }) => {
     );
   }, []);
 
+  const handleClear = useCallback(() => {
+    editedCategory && setEditedCategory(null);
+    setName('');
+    setParentCategory('');
+    setProperties([]);
+  }, [editedCategory]);
+
   const handleSubmit = useCallback(async (e) => {
     e.preventDefault();
 
