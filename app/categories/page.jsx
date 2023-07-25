@@ -112,8 +112,8 @@ const Categories = ({ swal }) => {
     }).then(async (result) => {
       if (result.isConfirmed) {
         const { _id: categoryId } = category;
-        await categoryAPI.deleteCategory(categoryId);
         setCategories((prev) => ([...prev].filter((item) => item._id !== categoryId)));
+        await categoryAPI.deleteCategory(categoryId);
       }
     }).catch((err) => {
       console.log(err);
