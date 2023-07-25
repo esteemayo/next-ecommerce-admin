@@ -71,8 +71,18 @@ const Categories = ({ swal }) => {
       setCategories((value) => [data, ...value]);
     }
 
+    fetchCategories();
     handleClear();
-  }, [name, properties, parentCategory, editedCategory, handleClear]);
+  },
+    [
+      name,
+      properties,
+      parentCategory,
+      editedCategory,
+      fetchCategories,
+      handleClear,
+    ]
+  );
 
   const editCategory = useCallback((category) => {
     setEditedCategory(category);
