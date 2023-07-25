@@ -9,7 +9,7 @@ const Categories = ({ swal }) => {
   const [name, setName] = useState('');
   const [parentCategory, setParentCategory] = useState();
   const [categories, setCategories] = useState([]);
-  const [editedCategory, setEditedcategory] = useState(null);
+  const [editedCategory, setEditedCategory] = useState(null);
   const [properties, setProperties] = useState([]);
 
   const handleClick = useCallback((e) => {
@@ -51,7 +51,7 @@ const Categories = ({ swal }) => {
       const { _id: categoryId } = editedCategory;
       const { data } = await categoryAPI.updateCategory(categoryId, newCategory);
       setCategories((prev) => prev.map((item) => item._id === categoryId ? { ...item, name: data.name, parent: data.parent } : item));
-      setEditedcategory(null);
+      setEditedCategory(null);
       setName('');
       setParentCategory('');
       return;
@@ -64,7 +64,7 @@ const Categories = ({ swal }) => {
   }, [name, parentCategory, editedCategory]);
 
   const editCategory = useCallback((category) => {
-    setEditedcategory(category);
+    setEditedCategory(category);
     setName(category.name);
     setParentCategory(category.parent?._id);
   }, []);
