@@ -106,7 +106,11 @@ const Categories = ({ swal }) => {
         </div>
         <div className='mb-2'>
           <label className='block'>Properties</label>
-          <button type='button' className='btn-default text-sm'>
+          <button
+            type='button'
+            onClick={handleClick}
+            className='btn-default text-sm'
+          >
             Add new property
           </button>
         </div>
