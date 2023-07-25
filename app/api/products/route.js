@@ -22,20 +22,10 @@ export const GET = async (request) => {
 export const POST = async (request) => {
   const body = await request.json();
 
-  const { title, category, description, price, images } = body;
-
-  const newProduct = {
-    title,
-    category,
-    description,
-    price,
-    images,
-  };
-
   try {
     await connectDB();
 
-    const product = await Product.create({ ...newProduct });
+    const product = await Product.create({ ...body });
 
     if (product) {
       return NextResponse.json(product, {
