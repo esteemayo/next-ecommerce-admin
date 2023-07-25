@@ -14,7 +14,7 @@ const Categories = ({ swal }) => {
 
   const handleClick = useCallback((e) => {
     e.stopPropagation();
-    setProperties((prev) => [...prev, { name: '', value: '' }]);
+    setProperties((prev) => [...prev, { name: '', values: '' }]);
   }, []);
 
   const handleSubmit = useCallback(async (e) => {
@@ -114,6 +114,23 @@ const Categories = ({ swal }) => {
           >
             Add new property
           </button>
+          {properties.length > 0 && properties.map((item, index) => {
+            const { name, values } = item;
+            return (
+              <div key={index} className='flex gap-1'>
+                <input
+                  type='text'
+                  value={name}
+                  placeholder='property name (example: color)'
+                />
+                <input 
+                type='text'
+                value={values}
+                placeholder='values, comma separated'
+                />
+              </div>
+            );
+          })}
         </div>
         <button type='submit' className='btn-primary py-1'>Save</button>
       </form>
