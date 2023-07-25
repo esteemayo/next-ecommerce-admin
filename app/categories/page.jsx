@@ -132,6 +132,7 @@ const Categories = ({ swal }) => {
     setEditedCategory(null);
     setName('');
     setParentCategory('');
+    setProperties([]);
   }, []);
 
   useEffect(() => {
