@@ -140,6 +140,10 @@ const Categories = ({ swal }) => {
     setProperties([]);
   }, []);
 
+  const formLabel = useMemo(() => {
+    return editedCategory ? `Edit category ${editedCategory.name}` : 'Create new category'
+  }, [editedCategory]);
+
   useEffect(() => {
     fetchCategories();
   }, [fetchCategories]);
