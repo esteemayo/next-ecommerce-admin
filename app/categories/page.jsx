@@ -62,6 +62,7 @@ const Categories = ({ swal }) => {
       setEditedCategory(null);
       setName('');
       setParentCategory('');
+      setProperties([]);
       return;
     }
 
@@ -69,6 +70,7 @@ const Categories = ({ swal }) => {
     setCategories((value) => [data, ...value]);
     setName('');
     setParentCategory('');
+    setProperties([]);
   }, [name, properties, parentCategory, editedCategory]);
 
   const editCategory = useCallback((category) => {
