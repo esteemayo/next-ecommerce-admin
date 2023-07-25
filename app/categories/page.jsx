@@ -101,7 +101,9 @@ const Categories = ({ swal }) => {
         </div>
         <div>
           <label>Properties</label>
-          <button type='button' className='btn-secondary'>Add new property</button>
+          <button type='button' className='btn-default'>
+            Add new property
+          </button>
         </div>
         <button type='submit' className='btn-primary py-1'>Save</button>
       </form>
