@@ -19,7 +19,6 @@ const initialState = {
   category: '',
   description: '',
   price: '',
-  properties: {},
 };
 
 const ProductForm = ({ slug, product, images: existingImages }) => {
@@ -29,13 +28,18 @@ const ProductForm = ({ slug, product, images: existingImages }) => {
   const [images, setImages] = useState(existingImages || []);
   const [categories, setCategories] = useState([]);
   const [goToProducts, setGoToProducts] = useState(false);
+  const [properties, setProperties] = useState({});
 
   const productId = product?._id;
-  const { title, category, description, price, properties } = values;
+  const { title, category, description, price } = values;
 
   const handleChange = useCallback(({ target: input }) => {
     const { name, value } = input;
     setValues((prev) => ({ ...prev, [name]: value }));
+  }, []);
+
+  const handleProperties = useCallback((name, value) => {
+    setProperties((prev) => ({ ...prev, [name]: value }));
   }, []);
 
   const handleSubmit = useCallback(async (e) => {
@@ -111,6 +115,8 @@ const ProductForm = ({ slug, product, images: existingImages }) => {
     })();
   }, []);
 
+  console.log(properties)
+
   if (goToProducts) {
     return redirect('/products');
   }
@@ -147,9 +153,8 @@ const ProductForm = ({ slug, product, images: existingImages }) => {
           <div key={index} className='flex gap-1'>
             <div>{name}</div>
             <select
-              name='properties'
               value={properties}
-              onChange={handleChange}
+              onChange={(e) => handleProperties(name, e.target.value)}
             >
               {values.map((item, index) => {
                 return (
