@@ -153,7 +153,7 @@ const ProductForm = ({ slug, product, images: existingImages }) => {
           <div key={index} className='flex gap-1'>
             <div>{name}</div>
             <select
-              value={properties}
+              value={properties[name]}
               onChange={(e) => handleProperties(name, e.target.value)}
             >
               {values.map((item, index) => {
