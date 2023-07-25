@@ -14,6 +14,7 @@ const Categories = ({ swal }) => {
 
   const handleClick = useCallback((e) => {
     e.stopPropagation();
+    setProperties((prev) => [...prev, { name: '', value: '' }]);
   }, []);
 
   const handleSubmit = useCallback(async (e) => {
