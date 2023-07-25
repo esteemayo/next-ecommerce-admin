@@ -115,8 +115,6 @@ const ProductForm = ({ slug, product, images: existingImages }) => {
     })();
   }, []);
 
-  console.log(properties)
-
   if (goToProducts) {
     return redirect('/products');
   }
