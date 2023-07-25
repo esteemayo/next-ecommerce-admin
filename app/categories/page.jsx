@@ -45,6 +45,7 @@ const Categories = ({ swal }) => {
     const newCategory = {
       name,
       parent: parentCategory,
+      properties,
     };
 
     if (editedCategory) {
@@ -65,7 +66,7 @@ const Categories = ({ swal }) => {
     setCategories((value) => [data, ...value]);
     setName('');
     setParentCategory('');
-  }, [name, parentCategory, editedCategory]);
+  }, [name, properties, parentCategory, editedCategory]);
 
   const editCategory = useCallback((category) => {
     setEditedCategory(category);
