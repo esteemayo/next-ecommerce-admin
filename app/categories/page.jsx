@@ -144,6 +144,7 @@ const Categories = ({ swal }) => {
                   type='text'
                   value={values}
                   placeholder='values, comma separated'
+                  onChange={(e) => handlePropertyValuesChange(index, item, e.target.value)}
                 />
               </div>
             );
