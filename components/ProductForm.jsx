@@ -83,7 +83,7 @@ const ProductForm = ({ slug, product, images: existingImages }) => {
 
     while (catInfo?.parent?._id) {
       const parentCat = categories.find((item) => item._id === catInfo?.parent?._id);
-      propertiesToFill.push(parentCat.properties);
+      propertiesToFill.push(...parentCat.properties);
       catInfo = parentCat;
     }
   }
