@@ -109,6 +109,15 @@ const Categories = ({ swal }) => {
     setParentCategory('');
   }, []);
 
+  const fetchCategories = useCallback(async () => {
+    try {
+      const { data } = await categoryAPI.getCategories();
+      setCategories(data);
+    } catch (err) {
+      console.log(err);
+    }
+  }, []);
+
   useEffect(() => {
     (async () => {
       try {
