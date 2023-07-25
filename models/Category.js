@@ -14,7 +14,9 @@ const categorySchema = new Schema(
       ref: 'Category',
     },
     properties: {
-      type: [{ type: Object }],
+      type: [
+        { type: Object },
+      ],
     },
   },
   {
