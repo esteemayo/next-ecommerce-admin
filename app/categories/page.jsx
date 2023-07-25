@@ -176,7 +176,7 @@ const Categories = ({ swal }) => {
             <button
               type='button'
               className='btn-default'
-              onClick={() => setEditedCategory(null)}
+              onClick={handleCancel}
             >
               Cancel
             </button>
