@@ -4,6 +4,8 @@ import { MongoDBAdapter } from '@auth/mongodb-adapter';
 
 import clientPromise from '@/lib/mongodb';
 
+const adminEmails = ['eadebayo15@gmail.com'];
+
 export const authOptions = {
   adapter: MongoDBAdapter(clientPromise),
   providers: [
@@ -12,6 +14,14 @@ export const authOptions = {
       clientSecret: process.env.GOOGLE_SECRET,
     }),
   ],
+  callbacks: {
+    session: ({ session, token, user }) => {
+      if (adminEmails.includes(session?.user?.email)) {
+        return session;
+      }
+      return false;
+    }
+  },
   pages: {
     signIn: '/',
     error: '/',
