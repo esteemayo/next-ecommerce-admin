@@ -99,6 +99,10 @@ const Categories = ({ swal }) => {
             })}
           </select>
         </div>
+        <div>
+          <label>Properties</label>
+          <button type='button' className='btn-secondary'>Add new property</button>
+        </div>
         <button type='submit' className='btn-primary py-1'>Save</button>
       </form>
       <table className='basic mt-4'>
