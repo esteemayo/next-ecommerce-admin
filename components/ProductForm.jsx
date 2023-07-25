@@ -146,7 +146,7 @@ const ProductForm = ({ slug, product, images: existingImages }) => {
         return (
           <div key={index} className='flex gap-1'>
             <div>{name}</div>
-            <select>
+            <select name='properties' onChange={handleChange}>
               {values.map((item, index) => {
                 return (
                   <option key={index} value={item}>
