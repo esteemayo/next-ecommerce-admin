@@ -100,8 +100,8 @@ const Categories = ({ swal }) => {
           </select>
         </div>
         <div>
-          <label>Properties</label>
-          <button type='button' className='btn-default'>
+          <label className='block'>Properties</label>
+          <button type='button' className='btn-default text-sm'>
             Add new property
           </button>
         </div>
