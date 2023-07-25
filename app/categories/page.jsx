@@ -90,6 +90,12 @@ const Categories = ({ swal }) => {
     });
   }, [swal]);
 
+  const handleCancel = useCallback(() => {
+    setEditedCategory(null);
+    setName('');
+    setParentCategory();
+  }, []);
+
   useEffect(() => {
     (async () => {
       try {
@@ -167,7 +173,7 @@ const Categories = ({ swal }) => {
         </div>
         <div className='flex gap-1'>
           {editedCategory && (
-            <button 
+            <button
               type='button'
               className='btn-default'
               onClick={() => setEditedCategory(null)}
