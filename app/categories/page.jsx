@@ -133,7 +133,7 @@ const Categories = ({ swal }) => {
           {properties.length > 0 && properties.map((item, index) => {
             const { name, values } = item;
             return (
-              <div key={index} className='flex gap-1'>
+              <div key={index} className='flex gap-1 mb-2'>
                 <input
                   type='text'
                   value={name}
