@@ -167,7 +167,11 @@ const Categories = ({ swal }) => {
         </div>
         <div className='flex gap-1'>
           {editedCategory && (
-            <button type='button' className='btn-default'>
+            <button 
+              type='button'
+              className='btn-default'
+              onClick={() => setEditedCategory(null)}
+            >
               Cancel
             </button>
           )}
