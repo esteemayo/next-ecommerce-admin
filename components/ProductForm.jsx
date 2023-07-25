@@ -76,6 +76,12 @@ const ProductForm = ({ slug, product, images: existingImages }) => {
     setImages(images);
   }, []);
 
+  const propertiesToFill = [];
+  if (categories.length > 0 && category) {
+    const selCatInfo = categories.find((item) => item._id === category);
+    propertiesToFill.push(...selCatInfo.properties);
+  }
+
   useEffect(() => {
     slug && setValues({
       title: product.title || '',
@@ -128,6 +134,14 @@ const ProductForm = ({ slug, product, images: existingImages }) => {
           );
         })}
       </select>
+      {propertiesToFill.length > 0 && propertiesToFill.map((item) => {
+        const { _id: id, name } = item;
+        return (
+          <div key={id}>
+            {name}
+          </div>
+        )
+      })}
       <div>
         <label htmlFor='photos'>Photos</label>
         <div className='mb-2 flex flex-wrap gap-1'>
