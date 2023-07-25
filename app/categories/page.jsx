@@ -50,7 +50,11 @@ const Categories = ({ swal }) => {
     if (editedCategory) {
       const { _id: categoryId } = editedCategory;
       const { data } = await categoryAPI.updateCategory(categoryId, newCategory);
-      setCategories((prev) => prev.map((item) => item._id === categoryId ? { ...item, name: data.name, parent: data.parent } : item));
+      setCategories((prev) => 
+        prev.map((item) => 
+          item._id === categoryId ? { ...item, name: data.name, parent: data.parent } : item
+        )
+      );
       setEditedCategory(null);
       setName('');
       setParentCategory('');
