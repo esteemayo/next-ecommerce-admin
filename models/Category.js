@@ -13,6 +13,9 @@ const categorySchema = new Schema(
       type: mongoose.Types.ObjectId,
       ref: 'Category',
     },
+    properties: {
+      type: [{ type: Object }],
+    },
   },
   {
     timestamps: true,
