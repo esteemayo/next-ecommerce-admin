@@ -119,15 +119,8 @@ const Categories = ({ swal }) => {
   }, []);
 
   useEffect(() => {
-    (async () => {
-      try {
-        const { data } = await categoryAPI.getCategories();
-        setCategories(data);
-      } catch (err) {
-        console.log(err);
-      }
-    })();
-  }, []);
+    fetchCategories();
+  }, [fetchCategories]);
 
   return (
     <>
