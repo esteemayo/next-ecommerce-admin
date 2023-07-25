@@ -134,10 +134,10 @@ const ProductForm = ({ slug, product, images: existingImages }) => {
           );
         })}
       </select>
-      {propertiesToFill.length > 0 && propertiesToFill.map((item) => {
-        const { _id: id, name } = item;
+      {propertiesToFill.length > 0 && propertiesToFill.map((item, index) => {
+        const { name, values } = item;
         return (
-          <div key={id}>
+          <div key={index}>
             {name}
           </div>
         )
