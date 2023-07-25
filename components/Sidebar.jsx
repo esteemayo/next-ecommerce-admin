@@ -49,6 +49,9 @@ const Sidebar = () => {
           </svg>
           Settings
         </Link>
+        <button type='button'>
+          Logout
+        </button>
       </nav>
     </aside>
   );
