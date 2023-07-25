@@ -10,6 +10,7 @@ const Categories = ({ swal }) => {
   const [parentCategory, setParentCategory] = useState();
   const [categories, setCategories] = useState([]);
   const [editedCategory, setEditedcategory] = useState(null);
+  const [properties, setProperties] = useState([]);
 
   const handleSubmit = useCallback(async (e) => {
     e.preventDefault();
