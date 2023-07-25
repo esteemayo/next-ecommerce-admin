@@ -17,6 +17,14 @@ const Categories = ({ swal }) => {
     setProperties((prev) => [...prev, { name: '', values: '' }]);
   }, []);
 
+  const handlePropertyNameChange = useCallback((index, property, newName) => {
+    setProperties((prev) => {
+      const properties = [...prev];
+      properties[index].name = newName;
+      return properties;
+    });
+  }, []);
+
   const handleSubmit = useCallback(async (e) => {
     e.preventDefault();
 
@@ -122,11 +130,12 @@ const Categories = ({ swal }) => {
                   type='text'
                   value={name}
                   placeholder='property name (example: color)'
+                  onChange={(e) => handlePropertyNameChange(index, item, e.target.value)}
                 />
-                <input 
-                type='text'
-                value={values}
-                placeholder='values, comma separated'
+                <input
+                  type='text'
+                  value={values}
+                  placeholder='values, comma separated'
                 />
               </div>
             );
