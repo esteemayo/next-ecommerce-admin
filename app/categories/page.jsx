@@ -126,7 +126,7 @@ const Categories = ({ swal }) => {
           <button
             type='button'
             onClick={handleClick}
-            className='btn-default text-sm'
+            className='btn-default text-sm mb-2'
           >
             Add new property
           </button>
