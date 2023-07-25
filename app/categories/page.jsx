@@ -1,7 +1,12 @@
 'use client';
 
 import { withSwal } from 'react-sweetalert2';
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import {
+  useCallback,
+  useEffect,
+  useMemo,
+  useState,
+} from 'react';
 
 import * as categoryAPI from '@/services/categoryService';
 
