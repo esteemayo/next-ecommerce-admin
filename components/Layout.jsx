@@ -6,6 +6,7 @@ import Sidebar from '@/components/Sidebar';
 
 const Layout = ({ children }) => {
   const { data: session } = useSession();
+  const [showNav, setShowNav] = useState(false);
 
   if (!session) {
     return (
