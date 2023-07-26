@@ -9,16 +9,19 @@ export const GET = async (request, { params }) => {
 
   try {
     await connectDB();
+    const isAdmin = await getIsAdmin();
 
-    const product = await Product.findOne({ slug });
+    if (isAdmin) {
+      const product = await Product.findOne({ slug });
 
-    if (!product) {
-      throw new Error('No product found with the given ID');
+      if (!product) {
+        throw new Error('No product found with the given ID');
+      }
+
+      return NextResponse.json(product, {
+        status: 200,
+      });
     }
-
-    return NextResponse.json(product, {
-      status: 200,
-    });
   } catch (err) {
     return NextResponse.json(err.message, {
       status: 500,
