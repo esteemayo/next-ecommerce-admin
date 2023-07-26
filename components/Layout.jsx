@@ -1,6 +1,7 @@
 'use client';
 
 import { useCallback, useState } from 'react';
+import Link from 'next/link';
 import { signIn, useSession } from 'next-auth/react';
 
 import Sidebar from '@/components/Sidebar';
