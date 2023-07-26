@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 
 import connectDB from '@/utils/db';
+import getIsAdmin from '@/actions/getIsAdmin';
 import Category from '@/models/Category';
 
 export const GET = async (request) => {
