@@ -12,7 +12,7 @@ export default async function getIsAdmin() {
     const session = await getSession();
 
     if (!adminEmails.includes(session?.user?.email)) {
-      throw new Error('Not admin');
+      throw new Error('Not an admin');
     }
 
     return session;
