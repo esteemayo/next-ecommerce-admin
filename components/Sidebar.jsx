@@ -4,6 +4,7 @@ import { usePathname, useRouter } from 'next/navigation';
 import { useCallback } from 'react';
 
 const Sidebar = () => {
+  const router = useRouter();
   const pathname = usePathname();
 
   const inactiveLink = 'flex align-middle gap-1 p-1';
