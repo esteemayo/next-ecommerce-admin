@@ -33,7 +33,7 @@ const Layout = ({ children }) => {
         </svg>
       </button>
       <div className='flex'>
-        <Sidebar />
+        <Sidebar show={showNav} />
         <div className='bg-white flex-grow mt-2 mr-2 mb-2 rounded-lg p-4'>
           {children}
         </div>
