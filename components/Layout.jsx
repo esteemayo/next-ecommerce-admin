@@ -12,7 +12,7 @@ const Layout = ({ children }) => {
 
   const handleOpen = useCallback((e) => {
     e.stopPropagation();
-    setShowNav(true);
+    setShowNav((value) => !value);
   }, []);
 
   if (!session) {
