@@ -95,6 +95,7 @@ export const PATCH = async (request, { params }) => {
 
 export const DELETE = async (request, { params }) => {
   const { id: productId } = params;
+  const isAdmin = await getIsAdmin();
 
   try {
     await connectDB();
@@ -103,17 +104,19 @@ export const DELETE = async (request, { params }) => {
       throw new Error('Invalid ID');
     }
 
-    const product = await Product.findByIdAndDelete(productId);
+    if (isAdmin) {
+      const product = await Product.findByIdAndDelete(productId);
 
-    if (!product) {
-      return NextResponse.json('No product found with the given ID', {
-        status: 404,
+      if (!product) {
+        return NextResponse.json('No product found with the given ID', {
+          status: 404,
+        });
+      }
+
+      return NextResponse.json('Product deleted successfully', {
+        status: 200,
       });
     }
-
-    return NextResponse.json('Product deleted successfully', {
-      status: 200,
-    });
   } catch (err) {
     return NextResponse.json(err.message, {
       status: 500,
