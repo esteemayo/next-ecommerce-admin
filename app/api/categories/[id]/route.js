@@ -10,29 +10,32 @@ export const PATCH = async (request, { params }) => {
 
   try {
     await connectDB();
+    const isAdmin = await getIsAdmin();
 
     if (!categoryId || typeof categoryId !== 'string') {
       throw new Error('Invalid ID');
     }
 
-    const category = await Category.findByIdAndUpdate(
-      categoryId,
-      { $set: { ...body } },
-      {
-        runValidators: true,
-        new: true,
-      },
-    );
+    if (isAdmin) {
+      const category = await Category.findByIdAndUpdate(
+        categoryId,
+        { $set: { ...body } },
+        {
+          runValidators: true,
+          new: true,
+        },
+      );
 
-    if (!category) {
-      return NextResponse.json('No category found with the given ID', {
-        status: 404,
+      if (!category) {
+        return NextResponse.json('No category found with the given ID', {
+          status: 404,
+        });
+      }
+
+      return NextResponse.json(category, {
+        status: 200,
       });
     }
-
-    return NextResponse.json(category, {
-      status: 200,
-    });
   } catch (err) {
     return NextResponse.json(err.message, {
       status: 500,
