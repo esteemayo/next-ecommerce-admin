@@ -2,6 +2,7 @@ import slugify from 'slugify';
 import { NextResponse } from 'next/server';
 
 import connectDB from '@/utils/db';
+import getIsAdmin from '@/actions/getIsAdmin';
 import Product from '@/models/Product';
 
 export const GET = async (request, { params }) => {
