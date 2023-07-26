@@ -8,6 +8,10 @@ const Layout = ({ children }) => {
   const { data: session } = useSession();
   const [showNav, setShowNav] = useState(false);
 
+  const handleOpen = useCallback(() => {
+    setShowNav(true);
+  }, []);
+
   if (!session) {
     return (
       <div className='bg-bgGray w-screen h-screen flex items-center'>
