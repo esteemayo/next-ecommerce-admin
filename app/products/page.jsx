@@ -37,7 +37,7 @@ const Products = () => {
         </thead>
         <tbody>
           {products.map((item) => {
-            const { _id: id, title, slug, description, price } = item;
+            const { _id: id, title, slug } = item;
             return (
               <tr key={id}>
                 <td>{title}</td>
