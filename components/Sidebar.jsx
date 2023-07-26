@@ -10,11 +10,11 @@ const Sidebar = () => {
   const inactiveLink = 'flex align-middle gap-1 p-1';
   const activeLink = `${inactiveLink} bg-white text-blue-900 rounded-l-lg`;
 
-  const handleLogout = useCallback((e) => {
+  const handleLogout = useCallback(async (e) => {
     e.stopPropagation();
 
-    signOut();
-    router.push('/');
+    await signOut();
+    await router.push('/');
   }, [router]);
 
   return (
