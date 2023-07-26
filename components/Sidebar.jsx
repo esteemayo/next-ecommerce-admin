@@ -10,6 +10,9 @@ const Sidebar = () => {
   const inactiveLink = 'flex align-middle gap-1 p-1';
   const activeLink = `${inactiveLink} bg-highlight text-black rounded-sm`;
 
+  const inactiveIcon = 'w-6 h-6';
+  const activeIcon = `${inactiveIcon} fill-primary`;
+
   const handleLogout = useCallback(async (e) => {
     e.stopPropagation();
 
