@@ -10,20 +10,23 @@ export const GET = async (request, { params }) => {
 
   try {
     await connectDB();
+    const isAdmin = await getIsAdmin();
 
     if (!productId || typeof productId !== 'string') {
       throw new Error('Invalid ID');
     }
 
-    const product = await Product.findById(productId);
+    if (isAdmin) {
+      const product = await Product.findById(productId);
 
-    if (!product) {
-      throw new Error('No product found with the given ID');
+      if (!product) {
+        throw new Error('No product found with the given ID');
+      }
+
+      return NextResponse.json(product, {
+        status: 200,
+      });
     }
-
-    return NextResponse.json(product, {
-      status: 200,
-    });
   } catch (err) {
     return NextResponse.json(err.message, {
       status: 500,
