@@ -3,6 +3,7 @@
 import { useCallback, useState } from 'react';
 import { signIn, useSession } from 'next-auth/react';
 
+import Logo from './Logo';
 import Sidebar from '@/components/Sidebar';
 
 const Layout = ({ children }) => {
