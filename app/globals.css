@@ -40,7 +40,7 @@ table.basic {
 }
 
 table.basic thead tr th {
-  @apply text-sm text-gray-600 capitalize;
+  @apply text-sm text-gray-600 capitalize border-b border-gray-300;
 }
 
 table.basic tr > * {
