@@ -43,10 +43,8 @@ table.basic thead tr th {
   @apply text-sm text-gray-600 capitalize;
 }
 
-table.basic tr,
-th,
-td {
-  @apply border border-blue-200 p-1;
+table.basic tr > * {
+  @apply p-1;
 }
 
 table.basic th {
