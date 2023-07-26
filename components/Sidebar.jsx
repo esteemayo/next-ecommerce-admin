@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import { useCallback } from 'react';
 
-const Sidebar = () => {
+const Sidebar = ({ show }) => {
   const router = useRouter();
   const pathname = usePathname();
 
