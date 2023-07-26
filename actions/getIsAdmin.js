@@ -14,6 +14,8 @@ export default async function getIsAdmin() {
     if (!adminEmails.includes(session?.user?.email)) {
       throw new Error('Not admin');
     }
+
+    return session;
   } catch (err) {
     return null;
   }
