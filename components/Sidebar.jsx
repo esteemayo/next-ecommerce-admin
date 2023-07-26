@@ -8,7 +8,7 @@ const Sidebar = () => {
   const pathname = usePathname();
 
   const inactiveLink = 'flex align-middle gap-1 p-1';
-  const activeLink = `${inactiveLink} bg-white text-primary rounded-l-lg`;
+  const activeLink = `${inactiveLink} bg-white text-primary rounded-sm`;
 
   const handleLogout = useCallback(async (e) => {
     e.stopPropagation();
