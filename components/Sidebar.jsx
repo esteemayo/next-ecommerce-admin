@@ -10,6 +10,13 @@ const Sidebar = () => {
   const inactiveLink = 'flex align-middle gap-1 p-1';
   const activeLink = `${inactiveLink} bg-white text-blue-900 rounded-l-lg`;
 
+  const handleLogout = useCallback((e) => {
+    e.stopPropagation();
+
+    signOut();
+    router.push('/');
+  }, [router]);
+
   return (
     <aside className='text-white p-4 pr-0'>
       <Link href='/' passHref className='flex gap-1 mb-4 mr-4'>
