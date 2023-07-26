@@ -28,13 +28,16 @@ export const POST = async (request) => {
 
   try {
     await connectDB();
+    const isAdmin = await getIsAdmin();
 
-    const product = await Product.create({ ...body });
+    if (isAdmin) {
+      const product = await Product.create({ ...body });
 
-    if (product) {
-      return NextResponse.json(product, {
-        status: 201,
-      });
+      if (product) {
+        return NextResponse.json(product, {
+          status: 201,
+        });
+      }
     }
   } catch (err) {
     return NextResponse.json(err.message, {
