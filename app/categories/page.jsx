@@ -68,7 +68,7 @@ const Categories = ({ swal }) => {
       parent: parentCategory === '' ? undefined : parentCategory,
       properties: properties.map((item) => ({
         name: item.name,
-        values: item.values.split(',')
+        values: item.values.split(','),
       })),
     };
 
