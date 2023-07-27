@@ -65,5 +65,5 @@ table.basic a {
 }
 
 .btn-default {
-  @apply bg-gray-600 text-white px-4 py-1 rounded-sm outline-gray-500 hover:bg-gray-500 transition;
+  @apply bg-white text-gray-800 px-4 py-1 rounded-sm border border-gray-200 outline-gray-300 transition;
 }
