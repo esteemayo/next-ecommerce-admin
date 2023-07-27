@@ -166,7 +166,7 @@ const ProductForm = ({ slug, product, images: existingImages }) => {
               </select>
             </div>
           </div>
-        )
+        );
       })}
       <div>
         <label htmlFor='photos'>Photos</label>
