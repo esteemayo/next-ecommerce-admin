@@ -149,7 +149,7 @@ const ProductForm = ({ slug, product, images: existingImages }) => {
       {propertiesToFill.length > 0 && propertiesToFill.map((item, index) => {
         const { name, values } = item;
         return (
-          <div key={index} className='flex gap-1'>
+          <div key={index}>
             <label>{name}</label>
             <div>
               <select
