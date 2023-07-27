@@ -40,11 +40,11 @@ table.basic {
 }
 
 table.basic thead tr th {
-  @apply text-sm text-gray-600 capitalize border-b border-gray-200 px-4;
+  @apply text-sm text-gray-600 capitalize border-b border-gray-200 px-4 py-2;
 }
 
 table.basic tr > * {
-  @apply p-1;
+  @apply px-4 py-2;
 }
 
 table.basic th {
