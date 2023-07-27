@@ -52,7 +52,7 @@ table.basic th {
 }
 
 table.basic a {
-  @apply btn-primary inline-flex mx-1 items-center;
+  @apply btn-primary inline-flex mx-1 items-center gap-1;
 }
 
 .btn-red,
