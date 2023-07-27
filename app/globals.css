@@ -24,7 +24,7 @@ textarea:focus {
 }
 
 label {
-  @apply text-blue-900;
+  @apply text-gray-800 text-sm;
 }
 
 h1 {
