@@ -150,19 +150,21 @@ const ProductForm = ({ slug, product, images: existingImages }) => {
         const { name, values } = item;
         return (
           <div key={index} className='flex gap-1'>
-            <div>{name}</div>
-            <select
-              value={properties[name]}
-              onChange={(e) => handleProperties(name, e.target.value)}
-            >
-              {values.map((item, index) => {
-                return (
-                  <option key={index} value={item}>
-                    {item}
-                  </option>
-                );
-              })}
-            </select>
+            <label>{name}</label>
+            <div>
+              <select
+                value={properties[name]}
+                onChange={(e) => handleProperties(name, e.target.value)}
+              >
+                {values.map((item, index) => {
+                  return (
+                    <option key={index} value={item}>
+                      {item}
+                    </option>
+                  );
+                })}
+              </select>
+            </div>
           </div>
         )
       })}
