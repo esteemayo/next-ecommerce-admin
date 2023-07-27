@@ -52,7 +52,7 @@ table.basic th {
 }
 
 table.basic a {
-  @apply text-white px-4 py-1 rounded-sm outline-gray-600 hover:bg-gray-600 transition inline-flex mx-1 items-center gap-1 bg-gray-700;
+  @apply text-white px-4 rounded-sm outline-gray-600 hover:bg-gray-600 transition inline-flex mx-1 items-center gap-1 bg-gray-700;
 }
 
 .btn-red,
