@@ -9,7 +9,7 @@ img {
 input,
 select,
 textarea {
-  @apply border border-gray-300 rounded-md px-1 w-full;
+  @apply border border-gray-200 rounded-sm w-full py-2 px-3;
   @apply mb-2 outline-none;
 }
 
