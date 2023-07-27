@@ -24,7 +24,7 @@ textarea:focus {
 }
 
 label {
-  @apply text-gray-600 text-sm capitalize;
+  @apply text-gray-600 text-sm;
 }
 
 h1 {
