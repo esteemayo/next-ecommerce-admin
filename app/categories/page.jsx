@@ -246,7 +246,7 @@ const Categories = ({ swal }) => {
                   <td>
                     <button
                       type='button'
-                      className='btn-primary mr-1'
+                      className='btn-default mr-1'
                       onClick={() => editCategory(item)}
                     >
                       Edit
