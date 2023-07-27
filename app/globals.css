@@ -32,7 +32,7 @@ h1 {
 }
 
 .btn-primary {
-  @apply bg-primary text-white px-4 py-1 rounded-sm outline-blue-900 hover:bg-blue-800 transition;
+  @apply bg-primary text-white px-4 py-1 rounded-sm shadow-sm outline-blue-900 hover:bg-blue-800 transition;
 }
 
 table.basic {
@@ -61,9 +61,9 @@ table.basic a {
 }
 
 .btn-red {
-  @apply bg-red-200 text-red-600 px-4 py-1 rounded-sm outline-red-300 hover:bg-red-300 transition;
+  @apply bg-red-200 text-red-600 px-4 py-1 rounded-sm shadow-sm outline-red-300 hover:bg-red-300 transition;
 }
 
 .btn-default {
-  @apply bg-white text-gray-800 px-4 py-1 rounded-sm border border-gray-200 outline-gray-300 transition;
+  @apply bg-white text-gray-800 px-4 py-1 rounded-sm border border-gray-200 shadow-sm outline-gray-300;
 }
