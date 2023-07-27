@@ -20,7 +20,7 @@ textarea {
 input:focus,
 select:focus,
 textarea:focus {
-  @apply border-blue-900;
+  @apply border-gray-100;
 }
 
 label {
