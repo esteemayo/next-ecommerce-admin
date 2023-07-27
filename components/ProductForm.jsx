@@ -177,7 +177,7 @@ const ProductForm = ({ slug, product, images: existingImages }) => {
             className='flex flex-wrap gap-1'
           >
             {!!images?.length && images.map((item, index) => {
-              <div key={index} className='h-24'>
+              <div key={index} className='h-24 bg-white p-4 shadow-sm rounded-sm border border-gray-200'>
                 <Image src={item} alt='' className='rounded-lg' />
               </div>
             })}
