@@ -150,7 +150,7 @@ const ProductForm = ({ slug, product, images: existingImages }) => {
         const { name, values } = item;
         return (
           <div key={index}>
-            <label>{name}</label>
+            <label>{`${name[0].toUpperCase()}${name.substring(1)}`}</label>
             <div>
               <select
                 value={properties[name]}
