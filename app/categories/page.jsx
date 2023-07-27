@@ -170,7 +170,11 @@ const Categories = ({ swal }) => {
             <option value=''>No parent category</option>
             {categories.length > 0 && categories.map((category) => {
               const { _id: id, name } = category;
-              return <option key={id} value={id}>{name}</option>
+              return (
+                <option key={id} value={id}>
+                  {name}
+                </option>
+              );
             })}
           </select>
         </div>
