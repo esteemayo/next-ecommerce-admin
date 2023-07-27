@@ -204,7 +204,7 @@ const Categories = ({ swal }) => {
                 <button
                   type='button'
                   onClick={() => handleRemoveProperty(index)}
-                  className='btn-default'
+                  className='btn-red'
                 >
                   Remove
                 </button>
