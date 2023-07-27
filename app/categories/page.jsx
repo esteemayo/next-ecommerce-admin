@@ -253,7 +253,7 @@ const Categories = ({ swal }) => {
                     </button>
                     <button
                       type='button'
-                      className='btn-primary'
+                      className='btn-red'
                       onClick={() => handleDelete(item)}
                     >
                       Delete
