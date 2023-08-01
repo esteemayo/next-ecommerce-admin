@@ -23,7 +23,7 @@ const Orders = () => {
       <table className='basic'>
         <thead>
           <tr>
-            <th>Category name</th>
+            <th>Date</th>
             <th>Recipient</th>
             <th>Products</th>
           </tr>
