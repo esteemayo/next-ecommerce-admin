@@ -39,6 +39,15 @@ const Orders = () => {
                   {city} {postalCode} {country} <br />
                   {streetAddress}
                 </td>
+                <td>
+                  {line_items.map((item, index) => {
+                    return (
+                      <div key={index}>
+                        {item.price_data.product_data.name} x {item.quantity}
+                      </div>
+                    );
+                  })}
+                </td>
               </tr>
             );
           })}
