@@ -30,10 +30,10 @@ const Orders = () => {
         </thead>
         <tbody>
           {orders.length > 0 && orders.map((item) => {
-            const { _id: id, name, email, city, postalCode, country, streetAddress } = item;
+            const { _id: id, name, email, city, postalCode, country, streetAddress, createdAt } = item;
             return (
               <tr key={id}>
-                <td>{id}</td>
+                <td>{createdAt}</td>
                 <td>
                   {name} {email} <br />
                   {city} {postalCode} {country} <br />
