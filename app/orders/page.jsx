@@ -29,9 +29,19 @@ const Orders = () => {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td></td>
-          </tr>
+          {orders.length > 0 && orders.map((item) => {
+            const { _id: id, name, email, city, postalCode, country, streetAddress } = item;
+            return (
+              <tr key={id}>
+                <td>{id}</td>
+                <td>
+                  {name} {email} <br />
+                  {city} {postalCode} {country} <br />
+                  {streetAddress}
+                </td>
+              </tr>
+            );
+          })}
         </tbody>
       </table>
     </>
