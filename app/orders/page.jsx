@@ -3,6 +3,8 @@
 import { useEffect, useState } from 'react';
 
 const Orders = () => {
+  const [orders, setOrders] = useState([]);
+
   return (
     <>
       <h1>Orders</h1>
