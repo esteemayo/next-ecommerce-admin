@@ -6,6 +6,17 @@ import { getOrders } from '@/services/orderService';
 const Orders = () => {
   const [orders, setOrders] = useState([]);
 
+  useEffect(() => {
+    (async () => {
+      try {
+        const { data } = await getOrders();
+        setOrders(data);
+      } catch (err) {
+        console.log(err);
+      }
+    })();
+  }, []);
+
   return (
     <>
       <h1>Orders</h1>
