@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { getOrders } from '@/services/orderService';
 
 const Orders = () => {
   const [orders, setOrders] = useState([]);
