@@ -30,7 +30,17 @@ const Orders = () => {
         </thead>
         <tbody>
           {orders.length > 0 && orders.map((item) => {
-            const { _id: id, name, email, city, postalCode, country, streetAddress, createdAt, line_items } = item;
+            const {
+              _id: id,
+              name,
+              email,
+              city,
+              postalCode,
+              country,
+              streetAddress,
+              createdAt,
+              line_items,
+            } = item;
             return (
               <tr key={id}>
                 <td>{createdAt}</td>
