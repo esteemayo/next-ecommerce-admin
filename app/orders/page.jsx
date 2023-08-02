@@ -38,6 +38,7 @@ const Orders = () => {
               postalCode,
               country,
               streetAddress,
+              paid,
               createdAt,
               line_items,
             } = item;
