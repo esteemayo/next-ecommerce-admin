@@ -24,6 +24,7 @@ const Orders = () => {
         <thead>
           <tr>
             <th>Date</th>
+            <th>Paid</th>
             <th>Recipient</th>
             <th>Products</th>
           </tr>
