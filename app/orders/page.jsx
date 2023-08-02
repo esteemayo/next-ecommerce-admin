@@ -48,6 +48,9 @@ const Orders = () => {
                   {new Date(createdAt).toLocaleString()}
                 </td>
                 <td>
+                  {paid ? 'YES' : 'NO'}
+                </td>
+                <td>
                   {name} {email} <br />
                   {city} {postalCode} {country} <br />
                   {streetAddress}
