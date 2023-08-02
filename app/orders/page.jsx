@@ -47,7 +47,7 @@ const Orders = () => {
                 <td>
                   {new Date(createdAt).toLocaleString()}
                 </td>
-                <td>
+                <td className={paid ? 'text-green-600' : 'text-red-600'}>
                   {paid ? 'YES' : 'NO'}
                 </td>
                 <td>
