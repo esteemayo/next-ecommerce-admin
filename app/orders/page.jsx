@@ -43,7 +43,7 @@ const Orders = () => {
             } = item;
             return (
               <tr key={id}>
-                <td>{createdAt.replace('T', ' ').substring(0, 19)}</td>
+                <td>{new Date(createdAt).toLocaleString()}</td>
                 <td>
                   {name} {email} <br />
                   {city} {postalCode} {country} <br />
