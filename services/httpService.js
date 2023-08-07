@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { toast } from 'react-hot-toast';
 import logger from './logService';
 
 const API = axios.create({
