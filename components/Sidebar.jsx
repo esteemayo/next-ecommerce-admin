@@ -102,4 +102,9 @@ const Sidebar = ({ show, onClose }) => {
   );
 };
 
+Sidebar.propTypes = {
+  show: PropTypes.bool.isRequired,
+  onClose: PropTypes.func.isRequired,
+};
+
 export default Sidebar;
