@@ -3,9 +3,7 @@
 import Loader from '@/components/Loader';
 
 const Loading = () => {
-  return (
-    <div>Loading</div>
-  );
+  return <Loader />;
 };
 
 export default Loading;
