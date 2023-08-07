@@ -8,6 +8,7 @@ import {
   useState,
 } from 'react';
 
+import ClientOnly from '@/components/ClientOnly';
 import * as categoryAPI from '@/services/categoryService';
 
 const Categories = ({ swal }) => {
