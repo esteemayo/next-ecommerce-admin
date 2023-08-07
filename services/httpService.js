@@ -18,6 +18,7 @@ API.interceptors.response.use(null, (error) => {
 
   if (!expectedError) {
     logger.log(error);
+    toast.error('An unexpected error occurred');
   }
 
   return Promise.reject(error);
