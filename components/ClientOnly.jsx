@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 
-const ClientOnly = () => {
+const ClientOnly = ({ children }) => {
   const [hasMounted, setHasMounted] = useState(false);
 
   useEffect(() => {
