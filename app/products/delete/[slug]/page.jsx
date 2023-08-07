@@ -16,12 +16,15 @@ const DeleteProduct = ({ params }) => {
 
   const handleDelete = useCallback(async (e) => {
     e.stopPropagation();
+    setDeletingId(product._id);
 
     try {
       await deleteProduct(product._id);
       goBack();
     } catch (err) {
       console.log(err);
+    } finally {
+      setDeletingId(null);
     }
   }, [product, goBack]);
 
