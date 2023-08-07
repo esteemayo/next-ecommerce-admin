@@ -15,6 +15,11 @@ const Layout = ({ children }) => {
     setShowNav((value) => !value);
   }, []);
 
+  const closeHandler = useCallback((e) => {
+    e.stopPropagation();
+    setShowNav(false);
+  }, []);
+
   if (!session) {
     return (
       <div className='bg-bgGray w-screen h-screen flex items-center'>
