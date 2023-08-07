@@ -11,20 +11,20 @@ const EditProduct = ({ params: { slug } }) => {
   useEffect(() => {
     (async () => {
       try {
-        const { data } = await getProductBySlug(params.slug);
+        const { data } = await getProductBySlug(slug);
         setProduct(data);
       } catch (err) {
         console.log(err);
       }
     })();
-  }, [params.slug]);
+  }, [slug]);
 
   return (
     <>
       <h1>Edit product</h1>
       {product && (
         <ProductForm
-          slug={params.slug}
+          slug={slug}
           product={product}
           images={product.images}
         />
