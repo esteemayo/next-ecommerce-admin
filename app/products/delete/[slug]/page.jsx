@@ -5,7 +5,7 @@ import { useCallback, useEffect, useState } from 'react';
 
 import { deleteProduct, getProductBySlug } from '@/services/productService';
 
-const DeleteProduct = ({ params }) => {
+const DeleteProduct = ({ params: { slug } }) => {
   const router = useRouter();
   const [product, setProduct] = useState({});
 
