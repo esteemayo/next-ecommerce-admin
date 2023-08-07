@@ -9,6 +9,10 @@ const ClientOnly = () => {
     setHasMounted(true);
   }, []);
 
+  if (!hasMounted) {
+    return null;
+  }
+
   return (
     <div>ClientOnly</div>
   );
