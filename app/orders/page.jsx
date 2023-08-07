@@ -19,7 +19,7 @@ const Orders = () => {
   }, []);
 
   return (
-    <>
+    <ClientOnly>
       <h1>Orders</h1>
       <table className='basic'>
         <thead>
@@ -71,7 +71,7 @@ const Orders = () => {
           })}
         </tbody>
       </table>
-    </>
+    </ClientOnly>
   );
 };
 
