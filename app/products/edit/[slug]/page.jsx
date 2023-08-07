@@ -21,7 +21,7 @@ const EditProduct = ({ params: { slug } }) => {
   }, [slug]);
 
   return (
-    <>
+    <ClientOnly>
       <h1>Edit product</h1>
       {product && (
         <ProductForm
@@ -30,7 +30,7 @@ const EditProduct = ({ params: { slug } }) => {
           images={product.images}
         />
       )}
-    </>
+    </ClientOnly>
   );
 };
 
