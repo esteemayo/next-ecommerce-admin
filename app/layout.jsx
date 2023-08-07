@@ -20,6 +20,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={nunito.className}>
         <AuthProvider>
+          <ToasterProvider />
           <Layout>
             {children}
           </Layout>
