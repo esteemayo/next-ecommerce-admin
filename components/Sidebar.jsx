@@ -3,6 +3,7 @@
 import { signOut } from 'next-auth/react';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
+import PropTypes from 'prop-types';
 import { useCallback } from 'react';
 
 import Logo from './Logo';
