@@ -16,8 +16,12 @@ const DeleteProduct = ({ params }) => {
   const handleDelete = useCallback(async (e) => {
     e.stopPropagation();
 
-    await deleteProduct(product._id);
-    goBack();
+    try {
+      await deleteProduct(product._id);
+      goBack();
+    } catch (err) {
+      console.log(err);
+    }
   }, [product, goBack]);
 
   useEffect(() => {
