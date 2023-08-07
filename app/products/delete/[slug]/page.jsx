@@ -50,6 +50,7 @@ const DeleteProduct = ({ params }) => {
           type='button'
           className='btn-red'
           onClick={handleDelete}
+          disabled={deletingId}
         >
           Yes
         </button>
