@@ -21,4 +21,8 @@ const Logo = ({ onClose }) => {
   );
 };
 
+Logo.propTypes = {
+  onClose: PropTypes.func,
+};
+
 export default Logo;
