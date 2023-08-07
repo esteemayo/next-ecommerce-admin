@@ -3,6 +3,8 @@
 import Image from 'next/image';
 import { useSession } from 'next-auth/react';
 
+import ClientOnly from '@/components/ClientOnly';
+
 const Home = () => {
   const { data: session } = useSession();
 
