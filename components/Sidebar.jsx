@@ -31,9 +31,9 @@ const Sidebar = ({ show, onClose }) => {
       </div>
       <nav className='flex flex-col gap-2'>
         <Link 
-          onClick={onClose} 
-          href='/' 
-          passHref 
+          onClick={onClose}
+          href='/'
+          passHref
           className={pathname === '/' ? activeLink : inactiveLink}
         >
           <svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' strokeWidth='1.5' stroke='currentColor' className={pathname === '/' ? activeIcon : inactiveIcon}>
