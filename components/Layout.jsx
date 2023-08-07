@@ -53,7 +53,10 @@ const Layout = ({ children }) => {
         )}
       </div>
       <div className='flex'>
-        <Sidebar show={showNav} onClose={closeHandler} />
+        <Sidebar
+          show={showNav}
+          onClose={closeHandler}
+        />
         <div className='flex-grow p-4'>
           {children}
         </div>
