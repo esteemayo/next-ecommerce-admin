@@ -7,7 +7,7 @@ import { useCallback } from 'react';
 
 import Logo from './Logo';
 
-const Sidebar = ({ show }) => {
+const Sidebar = ({ show, onClose }) => {
   const router = useRouter();
   const pathname = usePathname();
 
