@@ -37,7 +37,7 @@ const DeleteProduct = ({ params: { slug } }) => {
   }, [slug]);
 
   return (
-    <>
+    <ClientOnly>
       <h1 className='text-center'>
         Do you really want to delete product
         &nbsp;&quot;{product?.title}&quot;?
@@ -58,7 +58,7 @@ const DeleteProduct = ({ params: { slug } }) => {
           NO
         </button>
       </div>
-    </>
+    </ClientOnly>
   );
 };
 
