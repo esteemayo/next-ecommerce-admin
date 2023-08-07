@@ -22,8 +22,9 @@ const Sidebar = ({ show, onClose }) => {
     e.stopPropagation();
 
     await signOut();
+    await onClose();
     await router.push('/');
-  }, [router]);
+  }, [router, onClose]);
 
   return (
     <aside className={`${show ? 'left-0' : '-left-full'} text-gray-500 p-4 fixed w-full bg-bgGray h-full md:static md:w-auto z-10 transition-all`}>
