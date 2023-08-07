@@ -2,8 +2,9 @@
 
 import { useEffect, useState } from 'react';
 
-import ProductForm from '@/components/ProductForm';
+import ClientOnly from '@/components/ClientOnly';
 import { getProductBySlug } from '@/services/productService';
+import ProductForm from '@/components/ProductForm';
 
 const EditProduct = ({ params: { slug } }) => {
   const [product, setProduct] = useState({});
