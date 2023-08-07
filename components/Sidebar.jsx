@@ -7,6 +7,7 @@ import PropTypes from 'prop-types';
 import { useCallback } from 'react';
 
 import Logo from './Logo';
+import ClientOnly from './ClientOnly';
 
 const Sidebar = ({ show, onClose }) => {
   const router = useRouter();
