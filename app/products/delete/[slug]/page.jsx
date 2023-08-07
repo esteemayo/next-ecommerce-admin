@@ -3,6 +3,7 @@
 import { useRouter } from 'next/navigation';
 import { useCallback, useEffect, useState } from 'react';
 
+import ClientOnly from '@/components/ClientOnly';
 import { deleteProduct, getProductBySlug } from '@/services/productService';
 
 const DeleteProduct = ({ params: { slug } }) => {
