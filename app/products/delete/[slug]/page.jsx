@@ -57,7 +57,6 @@ const DeleteProduct = ({ params }) => {
           type='button'
           onClick={goBack}
           className='btn-default'
-          disabled={deletingId}
         >
           NO
         </button>
