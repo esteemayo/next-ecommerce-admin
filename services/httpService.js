@@ -8,7 +8,7 @@ const NEXT_PUBLIC_DEV_API_URL = process.env.NEXT_PUBLIC_DEV_API_URL;
 const NEXT_PUBLIC_PROD_API_URL = process.env.NEXT_PUBLIC_PROD_API_URL;
 
 const API = axios.create({
-  baseURL: process.env.NEXT_PUBLIC_API_URL,
+  baseURL: devEnv ? NEXT_PUBLIC_DEV_API_URL : NEXT_PUBLIC_PROD_API_URL,
   headers: {
     'Content-Type': 'application/json',
   },
