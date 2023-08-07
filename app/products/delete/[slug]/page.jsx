@@ -16,7 +16,6 @@ const DeleteProduct = ({ params }) => {
 
   const handleDelete = useCallback(async (e) => {
     e.stopPropagation();
-    setDeletingId(product._id);
 
     try {
       await deleteProduct(product._id);
