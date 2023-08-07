@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import PropTypes from 'prop-types';
 
 const Logo = ({ onClose }) => {
   return (
