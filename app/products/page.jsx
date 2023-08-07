@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
+import ClientOnly from '@/components/ClientOnly';
 import { getProducts } from '@/services/productService';
 
 const Products = () => {
