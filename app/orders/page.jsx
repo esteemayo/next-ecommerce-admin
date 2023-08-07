@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import ClientOnly from '@/components/ClientOnly';
 import { getOrders } from '@/services/orderService';
 
 const Orders = () => {
