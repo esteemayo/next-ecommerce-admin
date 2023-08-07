@@ -8,7 +8,6 @@ import { deleteProduct, getProductBySlug } from '@/services/productService';
 const DeleteProduct = ({ params }) => {
   const router = useRouter();
   const [product, setProduct] = useState({});
-  const [deletingId, setDeletingId] = useState(null);
 
   const goBack = useCallback(() => {
     router.push('/products');
