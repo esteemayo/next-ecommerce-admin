@@ -23,8 +23,6 @@ const DeleteProduct = ({ params }) => {
       goBack();
     } catch (err) {
       console.log(err);
-    } finally {
-      setDeletingId(null);
     }
   }, [product, goBack]);
 
