@@ -25,15 +25,15 @@ const DeleteProduct = ({ params: { slug } }) => {
   }, [product, goBack]);
 
   useEffect(() => {
-    params.slug && (async () => {
+    slug && (async () => {
       try {
-        const { data } = await getProductBySlug(params.slug);
+        const { data } = await getProductBySlug(slug);
         setProduct(data);
       } catch (err) {
         console.log(err);
       }
     })();
-  }, [params]);
+  }, [slug]);
 
   return (
     <>
