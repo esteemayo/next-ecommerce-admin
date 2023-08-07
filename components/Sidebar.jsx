@@ -27,10 +27,10 @@ const Sidebar = ({ show, onClose }) => {
   return (
     <aside className={`${show ? 'left-0' : '-left-full'} text-gray-500 p-4 fixed w-full bg-bgGray h-full md:static md:w-auto z-10 transition-all`}>
       <div className='mb-4 mr-4'>
-        <Logo />
+        <Logo onClose={onClose} />
       </div>
       <nav className='flex flex-col gap-2'>
-        <Link 
+        <Link
           onClick={onClose}
           href='/'
           passHref
