@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 import ProductForm from '@/components/ProductForm';
 import { getProductBySlug } from '@/services/productService';
 
-const EditProduct = ({ params }) => {
+const EditProduct = ({ params: { slug } }) => {
   const [product, setProduct] = useState({});
 
   useEffect(() => {
@@ -23,10 +23,10 @@ const EditProduct = ({ params }) => {
     <>
       <h1>Edit product</h1>
       {product && (
-        <ProductForm 
+        <ProductForm
           slug={params.slug}
-          product={product} 
-          images={product.images} 
+          product={product}
+          images={product.images}
         />
       )}
     </>
