@@ -152,7 +152,7 @@ const Categories = ({ swal }) => {
   }, [fetchCategories]);
 
   return (
-    <>
+    <ClientOnly>
       <h1>Categories</h1>
       <form onSubmit={handleSubmit}>
         <label htmlFor='name'>{formLabel}</label>
@@ -270,7 +270,7 @@ const Categories = ({ swal }) => {
           </tbody>
         </table>
       )}
-    </>
+    </ClientOnly>
   );
 };
 
